@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Src\Organizer.Usage\Organizer.Usage.csproj" />
+    <ProjectReference Include="..\Organizer.Usage\Organizer.Usage.csproj" />
   </ItemGroup>
 
 </Project>
