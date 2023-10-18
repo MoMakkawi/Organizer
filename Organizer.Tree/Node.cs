@@ -2,9 +2,9 @@
 
 public sealed class Node
 {
-    public Value Value { get; set; }
+    public required Value Value { get; set; }
     public List<Node> Children { get; set; } = Enumerable.Empty<Node>().ToList();
-    public Node Parent { get; set; }
+    public Node? Parent { get; set; }
 
     public bool IsLeaf => Children.Count == 0;
 

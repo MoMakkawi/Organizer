@@ -1,6 +1,4 @@
-﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
-
-namespace Organizer.Tree;
+﻿namespace Organizer.Tree;
 
 public static class Helpers
 {
@@ -34,4 +32,9 @@ public static class Helpers
             .Replace(" ", string.Empty)
             .Replace("nameof(", string.Empty)
             .Replace(")", string.Empty);
+
+    public static string RefactoreSlashes(this string path)
+        => path.Replace("\"", string.Empty)
+        .Replace("\\\\", "\\")
+        .Replace("\\", "\\\\");
 }
