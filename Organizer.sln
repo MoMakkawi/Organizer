@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{B0B7D7C9-C13
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Organizer.Usage", "Src\Organizer.Usage\Organizer.Usage.csproj", "{AE1A5B5D-495A-42D3-875A-B209EAA0AFF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizer.Tree", "Organizer.Tree\Organizer.Tree.csproj", "{7FB193BD-4D7A-4B3D-9657-34E51A964177}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{AE1A5B5D-495A-42D3-875A-B209EAA0AFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE1A5B5D-495A-42D3-875A-B209EAA0AFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE1A5B5D-495A-42D3-875A-B209EAA0AFF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FB193BD-4D7A-4B3D-9657-34E51A964177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB193BD-4D7A-4B3D-9657-34E51A964177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB193BD-4D7A-4B3D-9657-34E51A964177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB193BD-4D7A-4B3D-9657-34E51A964177}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E228FD9E-770D-40D3-9027-CBD6D871AD89} = {B0B7D7C9-C13B-4A4F-849A-397987EAC743}
 		{AE1A5B5D-495A-42D3-875A-B209EAA0AFF4} = {B0B7D7C9-C13B-4A4F-849A-397987EAC743}
+		{7FB193BD-4D7A-4B3D-9657-34E51A964177} = {B0B7D7C9-C13B-4A4F-849A-397987EAC743}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0F92AEEA-B8D5-4391-B60B-645FE057E251}
