@@ -10,7 +10,7 @@ It meant to organize any unorganized C# code as requested by the client, by rest
 in different folders and files according to the needs of the client using a set of services. 
 The meaning of unorganized code in the scope of The Organizer is C# code files full of base types.
 
-## The services provided by the Organizer are:
+### The services provided by the Organizer are:
  * A service to create folder(s) to contain generated files.
  * A service to include base type(s) in a specific generated folder depending on a type name or a pattern.
  * A service to change the name(s) of specific type(s) depending on a base type name or pattern of multiple base types.
@@ -22,6 +22,11 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
  - .NET Compiler Roslyn.
  - xUnit.
  - .NET 7.0.
+
+# Organizer Architecture :
+![Organizer Architecture](https://github.com/MoMakkawi/Organizer/assets/94985793/099076cb-f74f-48aa-be8b-3da65f787439)
+
+
 
 # Note :
 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
