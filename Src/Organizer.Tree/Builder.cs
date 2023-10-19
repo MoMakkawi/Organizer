@@ -1,4 +1,7 @@
-﻿using static Organizer.Tree.HeaderHandler;
+﻿using Organizer.Tree.Core;
+using Organizer.Tree.Handlers;
+using static Organizer.Tree.Handlers.HeaderHandler;
+using static Organizer.Tree.Helpers.Helpers;
 
 namespace Organizer.Tree;
 
@@ -58,7 +61,7 @@ public sealed class Builder
         var root = nodes.First(n => n.Parent is null);
         var code = root.Value.Block.SyntaxTree.ToString();
 
-        var depth = Helpers.MaxDepthStartingFrom(root);
+        var depth = MaxDepthStartingFrom(root);
         for (int n = 0; n < depth - 1; n++)
         {
             var parent = nodes[n].IsLeaf ? nodes[n].Parent : nodes[n];

@@ -1,4 +1,4 @@
-﻿namespace Organizer.Tree;
+﻿namespace Organizer.Tree.Core;
 
 public sealed class Value
 {

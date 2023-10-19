@@ -1,6 +1,8 @@
 ﻿using Organizer.Client;
+using Organizer.Tree.Core;
+using Organizer.Tree.Helpers;
 
-namespace Organizer.Tree;
+namespace Organizer.Tree.Handlers;
 
 internal static class HeaderHandler
 {

@@ -1,4 +1,6 @@
-﻿namespace Organizer.Tree;
+﻿using Organizer.Tree.Core;
+
+namespace Organizer.Tree.Helpers;
 
 public static class Helpers
 {
