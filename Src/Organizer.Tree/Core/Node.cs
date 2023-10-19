@@ -3,7 +3,7 @@
 public sealed class Node
 {
     public required Value Value { get; set; }
-    public List<Node> Children { get; set; } = Enumerable.Empty<Node>().ToList();
+    internal List<Node> Children { get; set; } = Enumerable.Empty<Node>().ToList();
     public Node? Parent { get; set; }
 
     public bool IsLeaf => Children.Count == 0;

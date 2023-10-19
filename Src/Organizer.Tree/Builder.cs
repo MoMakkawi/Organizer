@@ -1,5 +1,6 @@
 ﻿using Organizer.Tree.Core;
 using Organizer.Tree.Handlers;
+
 using static Organizer.Tree.Handlers.HeaderHandler;
 using static Organizer.Tree.Helpers.Helpers;
 
@@ -7,13 +8,11 @@ namespace Organizer.Tree;
 
 public sealed class Builder
 {
-    public static List<Node> BuildTree(IEnumerable<BlockSyntax>? blocks)
-    {
-        if (blocks is null)
-            return Enumerable.Empty<Node>().ToList();
+    public static List<Node> TreeBuilder(IEnumerable<BlockSyntax>? blocks) 
+        => blocks is null ? Enumerable.Empty<Node>().ToList() : BuildTree(blocks);
 
-        return RefactorInfos(BuildEdges(BuildNodesByDescending(blocks)));
-    }
+    private static List<Node> BuildTree(IEnumerable<BlockSyntax> blocks)
+        => RefactorInfos(BuildEdges(BuildNodesByDescending(blocks)));
 
     private static List<Node> BuildNodesByDescending(IEnumerable<BlockSyntax> blocks)
     {
@@ -23,7 +22,7 @@ public sealed class Builder
         {
             var node = new Node()
             {
-                Value = new Value()
+                Value = new()
                 {
                     Block = blocks.ElementAt(i)
                 }
@@ -86,10 +85,10 @@ public sealed class Builder
         //update first childe
         var firstChild = parent.Children.First();
 
-        var headerFirstChild = GetHeaderNode(
-                code,
-                parent.Value.Block.SpanStart,
-                firstChild.Value.Block.SpanStart);
+        var startHeaderNode = parent.Value.Block.SpanStart;
+        var endHeaderNode = firstChild.Value.Block.SpanStart;
+
+        var headerFirstChild = GetHeaderNode(code,startHeaderNode,endHeaderNode);
 
         firstChild.SetHeaderNode(headerFirstChild);
     }
@@ -105,10 +104,11 @@ public sealed class Builder
             //update current child
             var currentChild = childrens[i];
 
-            var headerCurrentChild = GetHeaderNode(
-                code,
-                previousChild.Value.Block.Span.End,
-                currentChild.Value.Block.SpanStart);
+
+            var startHeaderNode = previousChild.Value.Block.Span.End;
+            var endHeaderNode = currentChild.Value.Block.SpanStart;
+
+            var headerCurrentChild = GetHeaderNode(code, startHeaderNode, endHeaderNode);
 
             currentChild.SetHeaderNode(headerCurrentChild);
         }

@@ -25,8 +25,7 @@ public static class Helpers
     private static string GetName(this InvocationExpressionSyntax invocation)
         => ((IdentifierNameSyntax)invocation.Expression)
             .Identifier
-            .ValueText
-            .ToString();
+            .ValueText;
 
     public static string GetParameterValue(this ArgumentSyntax arg)
         => arg.ToString()
@@ -36,7 +35,7 @@ public static class Helpers
             .Replace(")", string.Empty);
 
     public static string RefactoreSlashes(this string path)
-        => path.Replace("\"", string.Empty)
+        => path
         .Replace("\\\\", "\\")
         .Replace("\\", "\\\\");
 }

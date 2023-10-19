@@ -25,14 +25,18 @@ internal static class HeaderHandler
     internal static void SetHeaderNode(this Node node, IEnumerable<InvocationExpressionSyntax> orginalHeader)
     {
         //header is new information
+        if (node.Parent is null)
+        {
+            node.Value.Header = orginalHeader;
+            return;
+        }
+        
         node.Value.Header = RefactorCreateFolderPaths(orginalHeader, node.Parent);
     }
 
     private static IEnumerable<InvocationExpressionSyntax> RefactorCreateFolderPaths
         (IEnumerable<InvocationExpressionSyntax> orginalHeader, Node parent)
     {
-        if (parent is null) return orginalHeader;
-
         var lastParentCreatFolderInvoc = parent.Value.Header?
             .LastOrDefault(invocation => invocation.IsName(nameof(OrganizerServices.CreateFolder)));
 
