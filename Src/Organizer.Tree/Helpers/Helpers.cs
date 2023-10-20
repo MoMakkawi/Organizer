@@ -34,8 +34,8 @@ public static class Helpers
             .Replace("nameof(", string.Empty)
             .Replace(")", string.Empty);
 
-    public static string RefactoreSlashes(this string path)
-        => path
+    public static string? RefactoreSlashes(this string? path)
+        => path?
         .Replace("\\\\", "\\")
         .Replace("\\", "\\\\");
 }

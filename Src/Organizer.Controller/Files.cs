@@ -4,9 +4,9 @@ namespace Organizer.Controller;
 
 internal static class Files
 {
-    internal static string GetTargetDirectoryPath(this ConstructorDeclarationSyntax ctor)
+    internal static string? GetTargetDirectoryPath(this ConstructorDeclarationSyntax? ctor)
     {
-        var toPath = ctor
+        var toPath = ctor?
             .GetAttributes(typeof(To))
             .Single()
             .GetPath();

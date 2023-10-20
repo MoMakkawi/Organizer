@@ -8,8 +8,6 @@ public static class CreateFolderService
 {
     public static void CreateForFolders(this IEnumerable<Node> leafs, string targetPath)
     {
-        targetPath = targetPath.RefactoreSlashes();
-
         foreach (var node in leafs)
         {
             var path = node

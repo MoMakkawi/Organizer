@@ -4,15 +4,10 @@ namespace Organizer.Services;
 
 internal static class Helpers
 {
-    internal static IEnumerable<InvocationExpressionSyntax> GetInvocations(this ConstructorDeclarationSyntax constructor)
-    {
-        return constructor?
+    internal static IEnumerable<InvocationExpressionSyntax> GetInvocations(this ConstructorDeclarationSyntax constructor) 
+        => constructor?
             .DescendantNodes()
             .OfType<InvocationExpressionSyntax>();
-    }
-
-    internal static string GetTypeName(this ArgumentSyntax arg)
-        => arg.GetParameterValue();
 
     internal static BaseTypeDeclarationSyntax ConvertToBaseTypeDeclarationSyntax(string type)
         => CSharpSyntaxTree.ParseText(type)
@@ -54,8 +49,8 @@ internal static class Helpers
     /// <returns>string contain : using directives then the namespace declaration have the input type declaration</returns>
     internal static string RefactoreToString(this BaseTypeDeclarationSyntax type)
     {
-        var nodes = type
-            .Parent
+        var nodes = type?
+            .Parent?
             .SyntaxTree
             .GetRoot()
             .DescendantNodes();
