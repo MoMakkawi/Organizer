@@ -4,7 +4,7 @@ So, that could be used by the client to organize the structure of their source c
 This will result in more usable source code as it will be easier to surf, access and read.
 
 ## Important note:
-There are two versions of this project, the first is a Docker Container, which contains a [Console Project](https://github.com/MoMakkawi/Organizer), while (This Version Here) the second is [Soucre Generator](https://github.com/MoMakkawi/Organizer-SG) Run at Compite-Time.
+There are two versions of this project, (This Version Here)  the first is a Docker Container, which contains a [Console Project](https://github.com/MoMakkawi/Organizer), while the second is [Soucre Generator](https://github.com/MoMakkawi/Organizer-SG) Run at Compite-Time.
 
 # General idea:
 This project is in the field of **Re-architecting** , It generates source code files and folders.
