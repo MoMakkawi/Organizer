@@ -27,7 +27,7 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
  - .NET 7.0.
 
 # Organizer Architecture :
-![Organizer Architecture](https://github.com/MoMakkawi/Organizer/assets/94985793/099076cb-f74f-48aa-be8b-3da65f787439)
+![Organizer Architecture](https://github.com/MoMakkawi/Organizer/assets/94985793/f07c6cf7-d8e4-44bc-b4b9-c5953d907b0e)
 
 ## 3 Points that will be clarified for each library :
 - How can the user benefit from it in this project?
