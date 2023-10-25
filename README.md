@@ -34,10 +34,9 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
 - Some explanatory notes.
 - How can the user reuse this library?
 
-### Organizer.Usage :
-#### 3 Points that will be clarified for Organizer.Usage Library :
-##### - How can the user benefit from Organizer.Usage Library in this project?
-Six steps to benefit from this library in our project:
+### First Library : Organizer.Usage Library :
+#### How can the user benefit from Organizer.Usage Library in this project?
+ Six steps to benefit from this library in our project:
 1. Download the library (recommend [NuGet](https://www.nuget.org/profiles/MoMakkawi))
 2. Create a C# file (suffixed by .cs)
 3. Create a class with any name you prefer (I recommend the name “Organizer”)
@@ -75,8 +74,8 @@ file class Organizer : OrganizerServices
 }
 ```
 
-##### - Some explanatory notes for Organizer.Usage Library.
-##### - How can the user reuse this Organizer.Usage library?
+##### Some explanatory notes for Organizer.Usage Library.
+##### How can the user reuse this Organizer.Usage library?
 
 
 # Note :
