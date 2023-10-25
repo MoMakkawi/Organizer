@@ -74,8 +74,8 @@ file class Organizer : OrganizerServices
 }
 ```
 
-##### Some explanatory notes for Organizer.Usage Library.
-##### How can the user reuse this Organizer.Usage library?
+#### Some explanatory notes for Organizer.Usage Library.
+#### How can the user reuse this Organizer.Usage library?
 
 
 # Note :
