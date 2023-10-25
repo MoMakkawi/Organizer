@@ -41,10 +41,39 @@ Six steps to benefit from this library in our project:
 1. Download the library (recommend [NuGet](https://www.nuget.org/profiles/MoMakkawi))
 2. Create a C# file (suffixed by .cs)
 3. Create a class with any name you prefer (I recommend the name “Organizer”)
-4. Make the constructor class inherit from the ["OrganizerServices" class](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) where it is located in the library.
+4. Make the constructor class inherit from the ["OrganizerServices" class](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) where it is located in the library under the "Organizer.Client" namespace
 5. Create a constructor from your class (Step 3).
 6. Finally, use the organizational services* provided by the library.
-E.g: ![OrganizerServicesExample](https://github.com/MoMakkawi/Organizer/assets/94985793/ea148361-1468-4e27-a4fb-c9a116cb4616)
+
+Example :
+```csharp
+using Organizer.Client;
+using Organizer.Client.Attributes;
+
+namespace OrganizerExample;
+
+file class Organizer : OrganizerServices
+{
+    [From("PathTo\\UnStructuredCode\\FileOrFolder")]
+    [To("PathTo\\DestinationFolder\\OrganizedCodeFolder")]
+    public Organizer()
+    {
+        CreateFolder("Requests");
+        {
+            ContainTypes("Requests");
+        }
+        CreateFolder("Responses");
+        {
+            UpdateTypes("Response", "Res");
+            ContainTypes("Res");
+        }
+        CreateFolder("Models");
+        {
+            ContainTypes("Model");
+        }
+    }
+}
+```
 
 ##### - Some explanatory notes for Organizer.Usage Library.
 ##### - How can the user reuse this Organizer.Usage library?
