@@ -13,7 +13,8 @@ It meant to organize any unorganized C# code as requested by the client, by rest
 in different folders and files according to the needs of the client using a set of services. 
 The meaning of unorganized code in the scope of The Organizer is C# code files full of base types.
 
-###<a name="OrganizerServicesExplain"></a> The services provided by the Organizer:
+<a name="OrganizerServicesExplain"></a>
+### The services provided by the Organizer:
  * A service to create folder(s) to contain generated files.
  * A service to include base type(s) in a specific generated folder depending on a type name or a pattern.
  * A service to change the name(s) of specific type(s) depending on a base type name or pattern of multiple base types.
