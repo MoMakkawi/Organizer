@@ -36,13 +36,14 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
 
 ### First Library : Organizer.Usage Library :
 #### How can the user benefit from Organizer.Usage Library in this project?
- Six steps to benefit from this library in our project:
+Steps to benefit from this library in our project:
 1. Download the library (recommend [NuGet](https://www.nuget.org/profiles/MoMakkawi))
 2. Create a C# file (suffixed by .cs)
 3. Create a class with any name you prefer (I recommend the name “Organizer”)
 4. Make the constructor class inherit from the ["OrganizerServices" class](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) where it is located in the library under the "Organizer.Client" namespace
 5. Create a constructor from your class (Step 3).
-6. Finally, use the organizational services* provided by the library.
+6. Use the "From" constructor Attribute(s) to specify the path (more than one path is allowed) in which the codes you want to organize will be located, and use the "To" constructor Attribute to specify the path (only one path is allowed) in which the resulting organized codes will be located.
+7. Finally, use the organizational services* provided by the library.
 
 Example :
 ```csharp
@@ -53,7 +54,8 @@ namespace OrganizerExample;
 
 file class Organizer : OrganizerServices
 {
-    [From("PathTo\\UnStructuredCode\\FileOrFolder")]
+    [From("PathTo\\UnStructuredCode\\file.cs")]
+    [From("PathTo\\UnStructuredCode\\Folder")]
     [To("PathTo\\DestinationFolder\\OrganizedCodeFolder")]
     public Organizer()
     {
