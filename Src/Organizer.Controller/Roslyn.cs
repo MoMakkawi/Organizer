@@ -5,11 +5,8 @@ namespace Organizer.Controller;
 
 public static class Roslyn
 {
-    public static IEnumerable<ClassDeclarationSyntax> GetClasses(this IEnumerable<SyntaxTree> trees)
-        => trees.SelectMany(tree => tree.GetClasses());
-
-    private static IEnumerable<ClassDeclarationSyntax> GetClasses(this SyntaxTree tree)
-        => tree
+    public static IEnumerable<ClassDeclarationSyntax>? GetClasses(this SyntaxTree? tree)
+        => tree?
             .GetRoot()
             .DescendantNodes()
             .OfType<ClassDeclarationSyntax>();
@@ -33,7 +30,7 @@ public static class Roslyn
             .Value
             .Block
             .SyntaxTree
-            .GetClasses()
+            .GetClasses()!
             .FindOrganizerClass()
             .FindOrganizerConstructor();
 }
