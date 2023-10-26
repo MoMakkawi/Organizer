@@ -44,7 +44,7 @@ Steps to benefit from this library in our project:
 4. Make the constructor class inherit from the ["OrganizerServices" class](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) where it is located in the library under the "Organizer.Client" namespace
 5. Create a constructor from your class (Step 3).
 6. Use the "From" constructor Attribute(s) to specify the path (more than one path is allowed) in which the codes you want to organize will be located, and use the "To" constructor Attribute to specify the path (only one path is allowed) in which the resulting organized codes will be located.
-7. Finally, use the [services](#OrganizerServicesExplain) provided by the Organizer.
+7.  Use an [organizer services](#OrganizerUsageNotes). Curly brackets must be used as shown in the example.
 
 Example :
 ```csharp
@@ -76,8 +76,28 @@ file class Organizer : OrganizerServices
     }
 }
 ```
-
+<a name="OrganizerUsageNotes"></a>
 #### Some explanatory notes for Organizer.Usage Library.
+* [C# BaseTypes](https://learn.microsoft.com/en-us/dotnet/api/microsoft.codeanalysis.csharp.syntax.typedeclarationsyntax?view=roslyn-dotnet-4.6.0) That is, we focus on: Classes + Interfaces + Structures + Records
+* The [services](#OrganizerServicesExplain) provided by the organizer will be used in the form of invocations :
+```csharp
+//Folder Organizer Service:
+
+CreateFolder("directoryName");
+
+//BaseTypes Organizer Services:
+
+ContainType("typeName");
+ContainTypes("pattern");
+ContainTypes("pattern", "except");
+
+IgnoreType("typeName");
+IgnoreTypes("pattern");
+
+UpdateType("oldTypeName", "newTypeName");
+UpdateTypes("pattern", "updateName");
+UpdateTypes("pattern", "updateName", "except");
+```
 #### How can the user reuse this Organizer.Usage library?
 
 
