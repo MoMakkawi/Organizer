@@ -3,6 +3,9 @@ Organizer a tool called that automates the process of organizing system architec
 So, that could be used by the client to organize the structure of their source code. 
 This will result in more usable source code as it will be easier to surf, access and read.
 
+## Important note:
+There are two versions of this project, (This Version Here)  the first is a Docker Container, which contains a [Console Project](https://github.com/MoMakkawi/Organizer), while the second is [Soucre Generator](https://github.com/MoMakkawi/Organizer-SG) Run at Compite-Time.
+
 # General idea:
 This project is in the field of **Re-architecting** , It generates source code files and folders.
 this project presents a Console Project and many libraries created with Roslyn for .NET developers. the project presented is called Organizer. 
@@ -10,7 +13,8 @@ It meant to organize any unorganized C# code as requested by the client, by rest
 in different folders and files according to the needs of the client using a set of services. 
 The meaning of unorganized code in the scope of The Organizer is C# code files full of base types.
 
-### The services provided by the Organizer are:
+<a name="OrganizerServicesExplain"></a>
+### The services provided by the Organizer:
  * A service to create folder(s) to contain generated files.
  * A service to include base type(s) in a specific generated folder depending on a type name or a pattern.
  * A service to change the name(s) of specific type(s) depending on a base type name or pattern of multiple base types.
@@ -24,8 +28,77 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
  - .NET 7.0.
 
 # Organizer Architecture :
-![Organizer Architecture](https://github.com/MoMakkawi/Organizer/assets/94985793/099076cb-f74f-48aa-be8b-3da65f787439)
+![Organizer Architecture](https://github.com/MoMakkawi/Organizer/assets/94985793/f07c6cf7-d8e4-44bc-b4b9-c5953d907b0e)
 
+## 3 Points that will be clarified for each library :
+- How can the user benefit from it in this project?
+- Some explanatory notes.
+- How can the user reuse this library?
+
+### First Library : Organizer.Usage Library :
+#### How can the user benefit from Organizer.Usage Library in this project?
+Steps to benefit from this library in our project:
+1. Download the library (recommend [NuGet](https://www.nuget.org/profiles/MoMakkawi))
+2. Create a C# file (suffixed by .cs)
+3. Create a class with any name you prefer (I recommend the name “Organizer”)
+4. Make the constructor class inherit from the ["OrganizerServices" class](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) where it is located in the library under the "Organizer.Client" namespace
+5. Create a constructor from your class (Step 3).
+6. Use the "From" constructor Attribute(s) to specify the path (more than one path is allowed) in which the codes you want to organize will be located, and use the "To" constructor Attribute to specify the path (only one path is allowed) in which the resulting organized codes will be located.
+7.  Use an [organizer services](#OrganizerUsageNotes). Curly brackets must be used as shown in the example.
+
+Example :
+```csharp
+using Organizer.Client;
+using Organizer.Client.Attributes;
+
+namespace OrganizerExample;
+
+file class Organizer : OrganizerServices
+{
+    [From("PathTo\\UnStructuredCode\\file.cs")]
+    [From("PathTo\\UnStructuredCode\\Folder")]
+    [To("PathTo\\DestinationFolder\\OrganizedCodeFolder")]
+    public Organizer()
+    {
+        CreateFolder("Requests");
+        {
+            ContainTypes("Requests");
+        }
+        CreateFolder("Responses");
+        {
+            UpdateTypes("Response", "Res");
+            ContainTypes("Res");
+        }
+        CreateFolder("Models");
+        {
+            ContainTypes("Model");
+        }
+    }
+}
+```
+<a name="OrganizerUsageNotes"></a>
+#### Some explanatory notes for Organizer.Usage Library.
+* [C# BaseTypes](https://learn.microsoft.com/en-us/dotnet/api/microsoft.codeanalysis.csharp.syntax.typedeclarationsyntax?view=roslyn-dotnet-4.6.0) That is, we focus on: Classes + Interfaces + Structures + Records
+* The [services](#OrganizerServicesExplain) provided by the organizer will be used in the form of invocations :
+```csharp
+//Folder Organizer Service:
+
+CreateFolder("directoryName");
+
+//BaseTypes Organizer Services:
+
+ContainType("typeName");
+ContainTypes("pattern");
+ContainTypes("pattern", "except");
+
+IgnoreType("typeName");
+IgnoreTypes("pattern");
+
+UpdateType("oldTypeName", "newTypeName");
+UpdateTypes("pattern", "updateName");
+UpdateTypes("pattern", "updateName", "except");
+```
+#### How can the user reuse this Organizer.Usage library?
 
 
 # Note :
