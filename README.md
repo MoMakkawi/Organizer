@@ -13,7 +13,7 @@ It meant to organize any unorganized C# code as requested by the client, by rest
 in different folders and files according to the needs of the client using a set of services. 
 The meaning of unorganized code in the scope of The Organizer is C# code files full of base types.
 
-### The services provided by the Organizer are:
+###<a name="OrganizerServicesExplain"></a> The services provided by the Organizer:
  * A service to create folder(s) to contain generated files.
  * A service to include base type(s) in a specific generated folder depending on a type name or a pattern.
  * A service to change the name(s) of specific type(s) depending on a base type name or pattern of multiple base types.
@@ -43,7 +43,7 @@ Steps to benefit from this library in our project:
 4. Make the constructor class inherit from the ["OrganizerServices" class](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) where it is located in the library under the "Organizer.Client" namespace
 5. Create a constructor from your class (Step 3).
 6. Use the "From" constructor Attribute(s) to specify the path (more than one path is allowed) in which the codes you want to organize will be located, and use the "To" constructor Attribute to specify the path (only one path is allowed) in which the resulting organized codes will be located.
-7. Finally, use the organizational services* provided by the library.
+7. Finally, use the [services](#OrganizerServicesExplain) provided by the Organizer.
 
 Example :
 ```csharp
