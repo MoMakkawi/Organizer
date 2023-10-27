@@ -100,6 +100,10 @@ UpdateTypes("pattern", "updateName", "except");
 ```
 #### How can the user reuse this Organizer.Usage library?
 
+### Second Library : Organizer.Tree Library :
+#### How can the user benefit from Organizer.Tree Library in this project?
+#### Some explanatory notes for Organizer.Tree Library.
+#### How can the user reuse this Organizer.Tree library?
 
 # Note :
 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
