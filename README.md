@@ -1,4 +1,4 @@
-# Summary:
+Summary:
 Organizer a tool called that automates the process of organizing system architecture files and folders based on the developer’s preference. 
 So, that could be used by the client to organize the structure of their source code. 
 This will result in more usable source code as it will be easier to surf, access and read.
@@ -100,6 +100,12 @@ UpdateTypes("pattern", "updateName", "except");
 
 ### Second Library : Organizer.Tree Library :
 #### How can the user benefit from Organizer.Tree Library in this project?
+The main function of this library is to build a tree, which is done by calling the ```TreeBuilder``` function located in the [Builder.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Tree/Builder.cs) file.
+The tree that we will build is like any tree that contains nodes and edges.
+We start with the node. The node contains two basic things: the value and additional information called the node description. The following figure shows more details.
+![Node structure ](https://github.com/MoMakkawi/Organizer/assets/94985793/b70f3c3d-d1c4-4ad6-9f84-6dca83a44fcc)
+
+
 #### Some explanatory notes for Organizer.Tree Library.
 
 # Note :
