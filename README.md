@@ -30,10 +30,9 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
 # Organizer Architecture :
 ![Organizer Architecture](https://github.com/MoMakkawi/Organizer/assets/94985793/f07c6cf7-d8e4-44bc-b4b9-c5953d907b0e)
 
-## 3 Points that will be clarified for each library :
+## There 2 Points that will be clarified for each library 
 - How can the user benefit from it in this project?
 - Some explanatory notes.
-- How can the user reuse this library?
 
 ### First Library : Organizer.Usage Library :
 #### How can the user benefit from Organizer.Usage Library in this project?
@@ -98,12 +97,10 @@ UpdateType("oldTypeName", "newTypeName");
 UpdateTypes("pattern", "updateName");
 UpdateTypes("pattern", "updateName", "except");
 ```
-#### How can the user reuse this Organizer.Usage library?
 
 ### Second Library : Organizer.Tree Library :
 #### How can the user benefit from Organizer.Tree Library in this project?
 #### Some explanatory notes for Organizer.Tree Library.
-#### How can the user reuse this Organizer.Tree library?
 
 # Note :
 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
