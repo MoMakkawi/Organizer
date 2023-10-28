@@ -13,7 +13,7 @@ It meant to organize any unorganized C# code as requested by the client, by rest
 in different folders and files according to the needs of the client using a set of services. 
 The meaning of unorganized code in the scope of The Organizer is C# code files full of base types.
 
-<a name="OrganizerServicesExplain"></a>
+<a name="ServicesExplain"></a>
 ### The services provided by the Organizer:
  * A service to create folder(s) to contain generated files.
  * A service to include base type(s) in a specific generated folder depending on a type name or a pattern.
@@ -43,7 +43,7 @@ Steps to benefit from this library in our project:
 4. Make the constructor class inherit from the ["OrganizerServices" class](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) where it is located in the library under the "Organizer.Client" namespace
 5. Create a constructor from your class (Step 3).
 6. Use the "From" constructor Attribute(s) to specify the path (more than one path is allowed) in which the codes you want to organize will be located, and use the "To" constructor Attribute to specify the path (only one path is allowed) in which the resulting organized codes will be located.
-7.  Use an [organizer services](#OrganizerUsageNotes). Curly brackets must be used as shown in the example.
+7.  Use an [organizer services](#UsageNotes). Curly brackets must be used as shown in the example.
 
 Example :
 ```csharp
@@ -75,10 +75,10 @@ file class Organizer : OrganizerServices
     }
 }
 ```
-<a name="OrganizerUsageNotes"></a>
+<a name="UsageNotes"></a>
 #### Some explanatory notes for Organizer.Usage Library.
 * [C# BaseTypes](https://learn.microsoft.com/en-us/dotnet/api/microsoft.codeanalysis.csharp.syntax.typedeclarationsyntax?view=roslyn-dotnet-4.6.0) That is, we focus on: Classes + Interfaces + Structures + Records
-* The [services](#OrganizerServicesExplain) provided by the organizer will be used in the form of invocations :
+* The [services](#ServicesExplain) provided by the organizer will be used in the form of invocations :
 ```csharp
 //Folder Organizer Service:
 
@@ -100,12 +100,13 @@ UpdateTypes("pattern", "updateName", "except");
 
 ### Second Library : Organizer.Tree Library :
 #### How can the user benefit from Organizer.Tree Library in this project?
-The main function of this library is to build a tree, which is done by calling the ```TreeBuilder``` function located in the [Builder.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Tree/Builder.cs) file.
-The tree that we will build is like any tree that contains nodes and edges.
-We start with the node. The node contains two basic things: the value and additional information called the node description. The following figure shows more details.
+The main function of this library is to build a tree, which is done by calling the ```TreeBuilder``` function located in the [Builder.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Tree/Builder.cs) file. \
+The tree that we will build is like any tree that contains nodes and edges. \
+We start with the node. The node contains two basic things: the value and additional information called the node description. The following figure shows more details for Node Structure.
 ![Node structure ](https://github.com/MoMakkawi/Organizer/assets/94985793/b70f3c3d-d1c4-4ad6-9f84-6dca83a44fcc)
+To build edges, we take advantage of the additional information that we called the node description,The next paragraph will explain the mechanism of building the tree in the necessary detail.
 
-
+<a name="TreeNotes"></a>
 #### Some explanatory notes for Organizer.Tree Library.
 
 # Note :
