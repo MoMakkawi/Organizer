@@ -1,4 +1,4 @@
-Summary:
+# Summary:
 Organizer a tool called that automates the process of organizing system architecture files and folders based on the developer’s preference. 
 So, that could be used by the client to organize the structure of their source code. 
 This will result in more usable source code as it will be easier to surf, access and read.
