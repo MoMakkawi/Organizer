@@ -103,7 +103,7 @@ UpdateTypes("pattern", "updateName", "except");
 The main function of this library is to build a tree, which is done by calling the ```TreeBuilder``` function located in the [Builder.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Tree/Builder.cs) file. \
 ***The tree*** that we will build is like any tree that contains nodes and edges. \
 We start with the nodes. **The node** contains two basic things: the value and additional information called the node description. The following figure shows more details for Node Structure.
-![Node structure ](https://github.com/MoMakkawi/Organizer/assets/94985793/b70f3c3d-d1c4-4ad6-9f84-6dca83a44fcc) \
+![Node structure ](https://github.com/MoMakkawi/Organizer/assets/94985793/19d1777b-fe15-412f-be80-4b4c09351072) \
 To build **edges**, we take advantage of the additional information that we called the node description,The next paragraph will explain the mechanism of building the tree in the necessary detail.
 
 <a name="TreeNotes"></a>
