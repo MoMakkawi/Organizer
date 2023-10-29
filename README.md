@@ -108,11 +108,10 @@ To build **edges**, we take advantage of the additional information that we call
 
 <a name="TreeNotes"></a>
 #### Some explanatory notes for Organizer.Tree Library.
-To build the tree, we will go through three basic steps that will change the values of the node object, as the following diagram shows, which displays snapshots showing how the values change as the object passes through the stages. \
+To build the tree, we will go through three basic steps that will change the values of the node object, as the following diagram shows, which displays snapshots showing how the values change as the object passes through the stages.At each stage, we focus on the variable(s) whose value and color will change to yellow, as in the first step we assigned a value to the block.
 1. Build Nodes Descending.
 2. Build Edges.
 3. Refactor Nodes Informations. \
-At each stage, we focus on the variable(s) whose value and color will change to yellow, as in the first step we assigned a value to the block.
 ![SnapShots Diagram](https://github.com/MoMakkawi/Organizer/assets/94985793/69682eea-642d-4d86-ba1c-6a130b7428c2)
 
 
