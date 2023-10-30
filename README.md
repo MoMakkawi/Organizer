@@ -128,8 +128,13 @@ _The second:_ To build a tree in reverse and then start with the first node, let
 The fulfillment of these two conditions makes node 1 a child of node x. \
 Why do we consider the first node that fulfills the condition to be the father? Do not think that the input is garbage and the output is garbage as well. The nodes will be in order. This is because the .Net compiler, i.e. Roslin, will read the blocks in a specific order, and I benefited from this feature. \
 Of course, after completing the edges, we will return the tree to the order we are accustomed to .
-![NodesWithEdges](https://github.com/MoMakkawi/Organizer/assets/94985793/4e2cbf1a-8e42-4044-a552-a2bde75c1f2d)
+![NodesWithEdges](https://github.com/MoMakkawi/Organizer/assets/94985793/4e2cbf1a-8e42-4044-a552-a2bde75c1f2d) \
 
+The third and final step is maintenance of the tree information, where we give a value to the header of the node. 
+![tree](https://github.com/MoMakkawi/Organizer/assets/94985793/05088b59-f85b-4457-893d-8127726626f9) \
+**There are two types of headers :**
+_The first_ is the one that is between a parent node and a child node: here the header of the son is the code written between '{', which specifies the beginning of the father block, and '{', which specifies the beginning of the son block. \
+_The second_ is between two nodes. Let us determine the header of the second node, i.e. the code between '}', which expresses the end of the first node's block, and '{', which specifies the beginning of the second node's block.
 
 
 # Note :
