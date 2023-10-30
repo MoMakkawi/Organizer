@@ -124,7 +124,7 @@ The parent’s block certainly contains the block of his children, as well as th
 
 This can be achieved through one of **two solutions** (we chose the second): \
 _The first:_ is to start with the father and try to search for his direct children and not the grandchildren. This is exhausting and will take a lot of effort, and if you think about it carefully, in our case it is not really effective. \
-_The second:_ To build a tree in reverse and then start with the first node, let us call it N1, as it has a beginning for its block, which we will call S1, and an end, which we will call E1. We search until we find the first node, which we call X, so that two conditions are met: the first is the beginning of node 1 is greater than the beginning of node 1 is smaller than the beginning of node x.
+_The second:_ To build a tree in reverse and then start with the first node, let us call it node 1. We search until we find the first node, which we call node X, so that two conditions are met: the first is the beginning of node 1 is greater than the beginning of node 1 is smaller than the beginning of node x.
 The fulfillment of these two conditions makes node 1 a child of node x. \
 Why do we consider the first node that fulfills the condition to be the father? Do not think that the input is garbage and the output is garbage as well. The nodes will be in order. This is because the .Net compiler, i.e. Roslin, will read the blocks in a specific order, and I benefited from this feature. \
 Of course, after completing the edges, we will return the tree to the order we are accustomed to . \
