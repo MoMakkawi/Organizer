@@ -116,7 +116,6 @@ To build **edges**, we take advantage of the additional information that we call
 
 * To understand these steps, you need to be focused. \
 The first step is to build the tree, but from the bottom up, This will be done by reverse For statement.
-ؤ
 ![Reversed Nodes](https://github.com/MoMakkawi/Organizer/assets/94985793/44994369-2fd0-4ac5-b5aa-86c3a92cf95c)
 
 
