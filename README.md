@@ -117,7 +117,18 @@ To build **edges**, we take advantage of the additional information that we call
 * To understand these steps, you need to be focused. \
 The first step is to build the tree, but from the bottom up, This will be done by reverse For statement.
 ![Reversed Nodes](https://github.com/MoMakkawi/Organizer/assets/94985793/44994369-2fd0-4ac5-b5aa-86c3a92cf95c)
+Of course, you are wondering why we built the tree in reverse in the first step, and the answer is here in the second step, where we will build the edges. We need to know which node is the father and which node is the son in order to connect them.
 
+The data for each node is two numbers, the beginning and end of the block
+The parent’s block certainly contains the block of his children, as well as the grandchildren
+
+This can be achieved through one of **two solutions** (we chose the second): \
+_The first:_ is to start with the father and try to search for his direct children and not the grandchildren. This is exhausting and will take a lot of effort, and if you think about it carefully, in our case it is not really effective.
+_The second:_ To build a tree in reverse and then start with the first node, let us call it N1, as it has a beginning for its block, which we will call S1, and an end, which we will call E1. We search until we find the first node, which we call X, so that two conditions are met: the first is the beginning of node 1 is greater than the beginning of node 1 is smaller than the beginning of node x.
+The fulfillment of these two conditions makes node 1 a child of node x. \
+Why do we consider the first node that fulfills the condition to be the father? Do not think that the input is garbage and the output is garbage as well. The nodes will be in order. This is because the .Net compiler, i.e. Roslin, will read the blocks in a specific order, and I benefited from this feature. \
+Of course, after completing the edges, we will return the tree to the order we are accustomed to 
+![NodesWithEdges](https://github.com/MoMakkawi/Organizer/assets/94985793/273fb0dd-8a8f-4209-b92d-8d1afe882c9d)
 
 
 # Note :
