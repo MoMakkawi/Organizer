@@ -159,6 +159,32 @@ _The second_ is between two nodes. Let us determine the header of the second nod
 }
 #endregion Parent Node
 ```
+Before assigning the header value to the node, we perform maintenance only and only for the content of one type of service, which is ```CreateFolder("folderName");``` where the maintenance is in its parameters. The following example shows what was maintained. \
+
+**Note** that what you will see will change inside the organizer. You can call it an internal change, meaning that the code that the user wrote will not actually change and will remain as he wrote it.
+
+Before maintenance: Note that if you want to know the path of file 3, you have to go up to find out the father path, and thus we notice that there may be a lot of go back, which will cost a lot.
+```csharp
+CreateFolder("folder1");
+{
+    CreateFolder("folder2");
+    {
+        CreateFolder("folder3");
+        { ... }
+    }
+}
+```
+After maintenance, it will be easy to know file 3 path, and the reason for this is that we will not have to go back.
+```csharp
+CreateFolder("folder1");
+{
+    CreateFolder("folder1//folder2");
+    {
+        CreateFolder("folder1//folder2//folder3");
+        { ... }
+    }
+}
+```
 
 # Note :
 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
