@@ -159,7 +159,7 @@ _The second_ is between two nodes. Let us determine the header of the second nod
 }
 #endregion Parent Node
 ```
-Before assigning the header value to the node, we perform maintenance only and only for the content of one type of service, which is ```CreateFolder("folderName");``` where the maintenance is in its parameters. The following example shows what was maintained. \
+Before assigning the header value to the node, we perform maintenance only and only for the content of one type of service, which is ```CreateFolder("folderName");``` where the maintenance is in its parameters. The following example shows what was maintained. 
 
 **Note** that what you will see will change inside the organizer. You can call it an internal change, meaning that the code that the user wrote will not actually change and will remain as he wrote it.
 
