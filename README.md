@@ -132,7 +132,7 @@ Of course, after completing the edges, we will return the tree to the order we a
 
 The third and final step is maintenance of the tree information, where we give a value to the header of the node. \
 ![tree](https://github.com/MoMakkawi/Organizer/assets/94985793/05088b59-f85b-4457-893d-8127726626f9) \
-**There are two types of headers :**
+**There are two types of headers :** \
 _The first_ is the one that is between a parent node and a first child node: here the header of the son is the code written between '{', which specifies the beginning of the father block, and '{', which specifies the beginning of the son block. \
 _The second_ is between two nodes. Let us determine the header of the second node, i.e. the code between '}', which expresses the end of the first node's block, and '{', which specifies the beginning of the second node's block. 
 ```csharp
