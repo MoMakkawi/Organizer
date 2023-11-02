@@ -4,12 +4,12 @@ namespace Organizer.Services;
 
 internal static class Helpers
 {
-    internal static IEnumerable<InvocationExpressionSyntax> GetInvocations(this ConstructorDeclarationSyntax constructor) 
+    internal static IEnumerable<InvocationExpressionSyntax>? GetInvocations(this ConstructorDeclarationSyntax? constructor) 
         => constructor?
             .DescendantNodes()
             .OfType<InvocationExpressionSyntax>();
 
-    internal static BaseTypeDeclarationSyntax ConvertToBaseTypeDeclarationSyntax(string type)
+    internal static BaseTypeDeclarationSyntax? ConvertToBaseTypeDeclarationSyntax(string type)
         => CSharpSyntaxTree.ParseText(type)
             .GetRoot()
             .DescendantNodes()

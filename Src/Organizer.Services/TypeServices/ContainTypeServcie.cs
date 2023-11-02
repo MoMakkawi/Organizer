@@ -70,8 +70,8 @@ public static class ContainTypeServcie
 
         Func<BaseTypeDeclarationSyntax, string> GetTypePath = (type)
              => Path
-                .Combine(fullTargetPath, type.Identifier.Text + ".g.cs")
-                .RefactoreSlashes();
+                .Combine(fullTargetPath, type.Identifier.Text + ".cs")
+                .RefactoreSlashes()!;
 
         typesToCreate
             .Select(type => new { content = type, path = GetTypePath(type) })
@@ -86,11 +86,11 @@ public static class ContainTypeServcie
             .LastOrDefault();
 
         return folderPath is null ? targetPath :
-            Path.Combine(targetPath, folderPath).RefactoreSlashes();
+            Path.Combine(targetPath, folderPath).RefactoreSlashes()!;
     }
 
-    private static IEnumerable<InvocationExpressionSyntax> GetPrimaryBlockInvocations
-        (this Value value)
+    private static IEnumerable<InvocationExpressionSyntax> GetPrimaryBlockInvocations(
+        this Value value)
     {
         var invocations = value
             .Block

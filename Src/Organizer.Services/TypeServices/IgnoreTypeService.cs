@@ -2,12 +2,12 @@
 
 public static class IgnoreTypeService
 {
-    public static IEnumerable<BaseTypeDeclarationSyntax> IgnoreForTypes
-        (this IEnumerable<BaseTypeDeclarationSyntax> types,
+    public static IEnumerable<BaseTypeDeclarationSyntax> IgnoreForTypes (
+        this IEnumerable<BaseTypeDeclarationSyntax> types,
         ConstructorDeclarationSyntax organizerCtor)
     {
         var invocations = organizerCtor
-            .GetInvocations();
+            .GetInvocations()!;
 
         return types
             .IgnoreTypesByName(invocations)
