@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 using Organizer.Tree.Core;
 using Organizer.Tree.Helpers;
@@ -59,25 +61,33 @@ public static class ContainTypeServcie
             .CreateRequeredTypes(fullTargetPath);
     }
 
-    private static void CreateRequeredTypes
-        (this IEnumerable<BaseTypeDeclarationSyntax> typesToCreate,
+    private static void CreateRequeredTypes(
+        this IEnumerable<BaseTypeDeclarationSyntax> typesToCreate,
         string fullTargetPath)
     {
-        Action<BaseTypeDeclarationSyntax, string> CreateFile = (type, typePath) =>
-             {
-                 File.WriteAllText(typePath, type.SyntaxTree.ToString());
-             };
 
-        Func<BaseTypeDeclarationSyntax, string> GetTypePath = (type)
-             => Path
-                .Combine(fullTargetPath, type.Identifier.Text + ".cs")
-                .RefactoreSlashes()!;
+        var tasks = typesToCreate
+            .Select(type =>
+            {
+                void createTypeAction() => CreateRequeredType(type, fullTargetPath);
 
-        typesToCreate
-            .Select(type => new { content = type, path = GetTypePath(type) })
-            .ToList()
-            .ForEach(_ => CreateFile(_.content, _.path));
+                return new Task(createTypeAction);
+            });
+
+        Task.WhenAll(tasks);
+
     }
+
+    private static void CreateRequeredType(this BaseTypeDeclarationSyntax typeToCreate,
+        string fullTargetPath)
+    {
+        var path = Path
+            .Combine(fullTargetPath, typeToCreate.Identifier.Text + ".cs")
+            .RefactoreSlashes()!;
+
+        File.WriteAllText(path, typeToCreate.SyntaxTree.ToString());
+    }
+
 
     private static string GetFullTargetPath(string targetPath, Node node)
     {

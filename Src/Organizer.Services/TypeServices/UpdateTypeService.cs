@@ -9,7 +9,7 @@ public static class UpdateTypeService
         ConstructorDeclarationSyntax organizerCtor)
     {
         var invocations = organizerCtor
-            .GetInvocations();
+            .GetInvocations()!;
 
         return types
             .UpdateForTypesByName(invocations)
@@ -24,14 +24,14 @@ public static class UpdateTypeService
         //update name of oldTypes we want to update
 
         var updatedTypesByName = invocations?
-            .GetMultParamsOf(nameof(OrganizerServices.UpdateType));
+            .GetMultParamsOf(nameof(OrganizerServices.UpdateType))!;
 
         var updatedTypes = types
             .Select(type => type.RefactoreToString())
             .Select(type => UpdaterByTypeName(type, updatedTypesByName))
             .Select(type => Helpers.ConvertToBaseTypeDeclarationSyntax(type));
 
-        return updatedTypes;
+        return updatedTypes!;
     }
 
     private static IEnumerable<BaseTypeDeclarationSyntax> UpdateForTypesByPattern
@@ -47,7 +47,7 @@ public static class UpdateTypeService
             .Select(type => UpdaterByTypeName(type, updatedTypesByName))
             .Select(Helpers.ConvertToBaseTypeDeclarationSyntax);
 
-        return updatedTypes;
+        return updatedTypes!;
     }
 
     private static IEnumerable<IEnumerable<string>> ToUpdatedTypesNames

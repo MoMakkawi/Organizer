@@ -11,17 +11,19 @@ public static class CreateFolderService
         foreach (var node in leafs)
         {
             var path = node
-                .Value?.Header
-                .LastOrDefault(invoc => invoc.IsName(nameof(OrganizerServices.CreateFolder)))
-                .ArgumentList.Arguments
-                .SingleOrDefault()
-                .GetParameterValue();
+                .Value?
+                .Header
+                .Last(invoc => invoc.IsName(nameof(OrganizerServices.CreateFolder)))
+                .ArgumentList
+                .Arguments
+                .SingleOrDefault()!
+                .GetParameterValue()!;
 
             var fullPath = Path.Combine(targetPath, path)
                 .RefactoreSlashes();
 
             if (!Directory.Exists(fullPath))
-                Directory.CreateDirectory(fullPath);
+                Directory.CreateDirectory(fullPath!);
         }
     }
 }
