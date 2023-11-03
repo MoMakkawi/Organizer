@@ -186,6 +186,10 @@ CreateFolder("folder1");
 }
 ```
 
+### Third Library : Organizer.Services Library :
+#### How can the user benefit from Organizer.Services Library in this project?
+#### Some explanatory notes for Organizer.Services Library.
+
 # Note :
 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
 You can access the code of The Organizer Source Code Generator At Compile Time via [GetHub Reopsitory](https://github.com/MoMakkawi/Organizer-SG),\
