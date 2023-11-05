@@ -33,7 +33,8 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
 ## There 2 Points that will be clarified for each library 
 - How can the user benefit from it in this project?
 - Some explanatory notes.
-
+- 
+<a name="OrganizerUsageLibrary"></a>
 ### First Library : Organizer.Usage Library :
 #### How can the user benefit from Organizer.Usage Library in this project?
 Steps to benefit from this library in our project:
@@ -186,8 +187,13 @@ CreateFolder("folder1");
 }
 ```
 
+<a name="OrganizerServicesLibrary"></a>
 ### Third Library : Organizer.Services Library :
 #### How can the user benefit from Organizer.Services Library in this project?
+In this library, the actual implementation of the organizer services will take place, as the basic functions that will be used later are: ```CreateForFolders```, ```IgnoreForTypes```, ```UpdateForTypes```, and ```ContainForTypes```.
+
+As it is clear from the names that each function is responsible for any implementation of any of the organizer services. For example, the ```IgnoreForTypes``` function in this library is responsible for the organizer services ```IgnoreType``` and ```IgnoreTypes``` provided by the [Organizer.Usage](#OrganizerUsageLibrary) library.
+
 #### Some explanatory notes for Organizer.Services Library.
 
 # Note :

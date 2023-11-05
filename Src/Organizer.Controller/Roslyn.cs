@@ -5,8 +5,8 @@ namespace Organizer.Controller;
 
 public static class Roslyn
 {
-    public static IEnumerable<ClassDeclarationSyntax>? GetClasses(this SyntaxTree? tree)
-        => tree?
+    public static IEnumerable<ClassDeclarationSyntax> GetClasses(this SyntaxTree tree)
+        => tree
             .GetRoot()
             .DescendantNodes()
             .OfType<ClassDeclarationSyntax>();
@@ -14,13 +14,13 @@ public static class Roslyn
     public static ClassDeclarationSyntax? FindOrganizerClass(this IEnumerable<ClassDeclarationSyntax> classes)
         => classes.FirstOrDefault(@class => @class!.BaseList!.Types.Any(t => t.Type.ToString() == nameof(OrganizerServices)));
 
-    public static IEnumerable<BlockSyntax>? GetBlockSyntaxes(this ConstructorDeclarationSyntax organizerConstructor)
-        => organizerConstructor?
+    public static IEnumerable<BlockSyntax> GetBlockSyntaxes(this ConstructorDeclarationSyntax organizerConstructor)
+        => organizerConstructor
             .DescendantNodes()
             .OfType<BlockSyntax>();
 
-    public static ConstructorDeclarationSyntax? FindOrganizerConstructor(this ClassDeclarationSyntax? organizerClass)
-        => organizerClass?
+    public static ConstructorDeclarationSyntax? FindOrganizerConstructor(this ClassDeclarationSyntax organizerClass)
+        => organizerClass
             .DescendantNodes()
             .OfType<ConstructorDeclarationSyntax>()
             .SingleOrDefault();
@@ -31,6 +31,6 @@ public static class Roslyn
             .Block
             .SyntaxTree
             .GetClasses()!
-            .FindOrganizerClass()
+            .FindOrganizerClass()!
             .FindOrganizerConstructor();
 }
