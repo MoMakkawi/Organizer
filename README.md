@@ -195,6 +195,8 @@ In this library, the actual implementation of the organizer services will take p
 As it is clear from the names that each function is responsible for any implementation of any of the organizer services. For example, the ```IgnoreForTypes``` function in this library is responsible for the organizer services ```IgnoreType``` and ```IgnoreTypes``` provided by the [Organizer.Usage](#OrganizerUsageLibrary) library.
 
 #### Some explanatory notes for Organizer.Services Library.
+* The implementation of the organizer's services has an arrangement that takes into account the organizer's performance , Where as the diagram shows:
+![Organizer Services Implamentation ](https://github.com/MoMakkawi/Organizer/assets/94985793/65321e69-1373-4421-8362-924f33be7bd3)
 
 # Note :
 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
