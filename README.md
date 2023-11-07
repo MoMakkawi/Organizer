@@ -198,6 +198,32 @@ As it is clear from the names that each function is responsible for any implemen
 * The implementation of the organizer's services has an arrangement that takes into account the organizer's performance , Where as the diagram shows:
 ![Organizer Services Implamentation ](https://github.com/MoMakkawi/Organizer/assets/94985793/65321e69-1373-4421-8362-924f33be7bd3)
 
+There are two mechanisms for implementing services. The first we will adopt for two services, i.e. ```UpdateForTypes```, ```IgnoreForTypes```, which depends on scanning, and the second for the two services, i.e. ```CreateForFolders```, and ```ContainForTypes``. `It depends on the tree that we had worked on and explained here.
+
+You will notice that there are two mechanisms that we have adopted to implement the services.
+The first we will adopt for two services: ```UpdateForTypes```, ```IgnoreForTypes```, where this mechanism is scanning,
+and here we bring all the calls present in the organizer constructor and we filter and execute. 
+There is no need to take into account Hierarchies, trees, etc., because this will increase the complexity for nothing.
+
+The following example means that we do not care about calling ignore type on any line that is inside the constructor,
+and it does not even matter which block it is in.
+    
+```csharp
+    [From("PathTo\\UnStructuredCode")]
+    [To("PathTo\\Destination\\OrganizedCode")]
+    public Organizer()
+    {
+        IgnoreType(typeName: "TName");
+
+        CreateFolder("Types");
+        {
+            IgnoreType(typeName: "TName");
+        }
+
+        IgnoreType(typeName: "TName");
+    }
+```
+
 # Note :
 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
 You can access the code of The Organizer Source Code Generator At Compile Time via [GetHub Reopsitory](https://github.com/MoMakkawi/Organizer-SG),\
