@@ -226,9 +226,9 @@ and it does not even matter which block it is in.
     }
 ```
 
-The second is for the second two services, ```CreateForFolders```, and ```ContainForTypes```, which depend on the [tree](#Tree) that we had worked on and explained.
+The second is for the second two services, ```CreateForFolders```, and ```ContainForTypes```, which depend on the [tree](#Tree) that we had worked on and explained. 
 
-For a Organizer service ```CreateForFolders``` , we benefit from our previous work on [internally changing the parameters](#InternalChangingParamenters) of this service. We implement the file creation service on leafs only. You may wonder why? Because of the wonderful feature that .Net provides in order to [create multiple directories from a single full path](https://stackoverflow.com/questions/2134392/how-to-create-multiple-directories-from-a-single-full-path-in-c) .
+For ```CreateForFolders``` Organizer service, we benefit from our previous work on [internally changing the parameters](#InternalChangingParamenters) of this service. We implement the file creation service on leafs only. You may wonder why? Because of the wonderful feature that .Net provides in order to [create multiple directories from a single full path](https://stackoverflow.com/questions/2134392/how-to-create-multiple-directories-from-a-single-full-path-in-c) . For the ```ContainForTypes``` Organizer service , we create files in parallel because their number may be large and this is a task that takes a significant amount of time to complete.
 
 # Note :
 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
