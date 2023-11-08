@@ -229,9 +229,13 @@ and it does not even matter which block it is in.
     }
 ```
 
-<a name="UsageNotes"></a>
+<a name="Controller"></a>
 ### Fourth library : Organizer.Controller Library :
+
+<a name="ControllerWork"></a>
 #### How can the user benefit from Organizer.Controller Library in this project?
+
+<a name="ControllerNotes"></a>
 #### Some explanatory notes for Organizer.Controller Library.
 
 # Note :
