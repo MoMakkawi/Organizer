@@ -229,7 +229,10 @@ and it does not even matter which block it is in.
     }
 ```
 
-
+<a name="UsageNotes"></a>
+### Fourth library : Organizer.Controller Library :
+#### How can the user benefit from Organizer.Controller Library in this project?
+#### Some explanatory notes for Organizer.Controller Library.
 
 # Note :
 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
