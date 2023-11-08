@@ -203,7 +203,10 @@ As it is clear from the names that each function is responsible for any implemen
 There are two mechanisms for implementing services. The first we will adopt for two services, i.e. ```UpdateForTypes```, ```IgnoreForTypes```, which depends on scanning, and the second for the two services, i.e. ```CreateForFolders```, and ```ContainForTypes```. It depends on the tree that we had worked on and explained here.
 
 You will notice that there are two mechanisms that we have adopted to implement the services.
-The first we will adopt for two services: ```UpdateForTypes```, ```IgnoreForTypes```, where this mechanism is scanning,
+
+_The First_ we will adopt for two services: ```CreateForFolders```, and ```ContainForTypes```, which depend on the [tree](#Tree) that we had worked on and explained.For ```CreateForFolders``` Organizer service, we benefit from our previous work on [internally changing the parameters](#InternalChangingParamenters) of this service. We implement the file creation service on leafs only. You may wonder why? Because of the wonderful feature that .Net provides in order to [create multiple directories from a single full path](https://stackoverflow.com/questions/2134392/how-to-create-multiple-directories-from-a-single-full-path-in-c) . For the ```ContainForTypes``` Organizer service , we create files in parallel because their number may be large and this is a task that takes a significant amount of time to complete.
+
+_The Second_ is for the second two services, ```UpdateForTypes```, ```IgnoreForTypes```, where this mechanism is scanning,
 and here we bring all the calls present in the organizer constructor and we filter and execute. 
 There is no need to take into account Hierarchies, trees, etc., because this will increase the complexity for nothing.
 
@@ -226,9 +229,7 @@ and it does not even matter which block it is in.
     }
 ```
 
-The second is for the second two services, ```CreateForFolders```, and ```ContainForTypes```, which depend on the [tree](#Tree) that we had worked on and explained. 
 
-For ```CreateForFolders``` Organizer service, we benefit from our previous work on [internally changing the parameters](#InternalChangingParamenters) of this service. We implement the file creation service on leafs only. You may wonder why? Because of the wonderful feature that .Net provides in order to [create multiple directories from a single full path](https://stackoverflow.com/questions/2134392/how-to-create-multiple-directories-from-a-single-full-path-in-c) . For the ```ContainForTypes``` Organizer service , we create files in parallel because their number may be large and this is a task that takes a significant amount of time to complete.
 
 # Note :
 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
