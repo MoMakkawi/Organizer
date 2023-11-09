@@ -189,15 +189,16 @@ CreateFolder("folder1");
 }
 ```
 
-<a name="ServicesNotes"></a>
+<a name="Services"></a>
 ### Third Library : Organizer.Services Library :
 #### How can the user benefit from Organizer.Services Library in this project?
 In this library, the actual implementation of the organizer services will take place, as the basic functions that will be used later are: ```CreateForFolders```, ```IgnoreForTypes```, ```UpdateForTypes```, and ```ContainForTypes```.
 
 As it is clear from the names that each function is responsible for any implementation of any of the organizer services. For example, the ```IgnoreForTypes``` function in this library is responsible for the organizer services ```IgnoreType``` and ```IgnoreTypes``` provided by the [Organizer.Usage](#UsageNotes) library.
 
+<a name="ServicesNotes"></a>
 #### Some explanatory notes for Organizer.Services Library.
-* The implementation of the organizer's services has an arrangement that takes into account the organizer's performance , Where as the diagram shows:
+The implementation of the organizer's services has an arrangement that takes into account the organizer's performance , Where as the diagram shows:
 ![Organizer Services Implamentation ](https://github.com/MoMakkawi/Organizer/assets/94985793/65321e69-1373-4421-8362-924f33be7bd3)
 
 There are two mechanisms for implementing services. The first we will adopt for two services, i.e. ```UpdateForTypes```, ```IgnoreForTypes```, which depends on scanning, and the second for the two services, i.e. ```CreateForFolders```, and ```ContainForTypes```. It depends on the tree that we had worked on and explained here.
@@ -239,6 +240,7 @@ This library will contain the functions that the organizer needs, and its presen
 
 <a name="ControllerNotes"></a>
 #### Some explanatory notes for Organizer.Controller Library.
+Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Controller/Servicer.cs) in the function ```ImplementOrganizerServices``` applies the [diagram](#ServicesNotes) which was explained above to deeply understand the logic behind the execution sequence of Organizer Services
 
 # Note :
 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
