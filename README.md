@@ -234,6 +234,8 @@ and it does not even matter which block it is in.
 
 <a name="ControllerWork"></a>
 #### How can the user benefit from Organizer.Controller Library in this project?
+This library will contain the functions that the organizer needs, and its presence helps implement the concept of **reuse**, as it is the layer that contains the functions that you can reuse, as I worked in the last layer in the organizer’s CLI version (this) or in the [Organizer-SG](https://github.com/MoMakkawi/Organizer-SG) version:
+```GetClasses``` and ```FindOrganizerClass``` , ```FindOrganizerConstructor``` , ```GetBlockSyntaxes``` and ```BuildFileStructureTree``` also ```ImplementOrganizerServices```.
 
 <a name="ControllerNotes"></a>
 #### Some explanatory notes for Organizer.Controller Library.
