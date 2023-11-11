@@ -33,7 +33,7 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
 ## There 2 Points that will be clarified for each library 
 - How can the user benefit from it in this project?
 - Some explanatory notes.
-- 
+  
 <a name="UsageNotes"></a>
 ### First Library : Organizer.Usage Library :
 #### How can the user benefit from Organizer.Usage Library in this project?
