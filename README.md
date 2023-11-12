@@ -198,7 +198,7 @@ As it is clear from the names that each function is responsible for any implemen
 
 <a name="ServicesNotes"></a>
 #### Some explanatory notes for Organizer.Services Library.
-The implementation of the organizer's services has an arrangement that takes into account the organizer's performance , Where as the diagram shows:
+* The implementation of the organizer's services has an arrangement that takes into account the organizer's performance , Where as the diagram shows:
 ![Organizer Services Implamentation ](https://github.com/MoMakkawi/Organizer/assets/94985793/65321e69-1373-4421-8362-924f33be7bd3)
 
 There are two mechanisms for implementing services. The first we will adopt for two services, i.e. ```UpdateForTypes```, ```IgnoreForTypes```, which depends on scanning, and the second for the two services, i.e. ```CreateForFolders```, and ```ContainForTypes```. It depends on the tree that we had worked on and explained here.
@@ -229,7 +229,32 @@ and it does not even matter which block it is in.
         IgnoreType(typeName: "TName");
     }
 ```
+* " Primary Block Invocation (PBI) " Note the following example in which there are 3 nodes we will focuse on Node1:
+```csharp
+CreateFolder("folder1"); //Node1 Header
+{ //Node1 Block Start
+    CreateFolder("folder2_1");
+    {
+        CreateFolder("folder3");
+        { ... }
+    }
+    CreateFolder("folder2_2");
+} //Node1 Block End
+```
 
+PBI are the ivocations that are present in the block of the studied node only and not in its child blocks, because we consider those in the child blocks to be secondary. Applying this to the previous example, we notice that these ```CreateFolder("folder2_1");``` and ```CreateFolder("folder2_2"); ``` are the PBI's for the Node1.
+
+```csharp
+CreateFolder("folder1"); //Node1 Header
+{ //Node1 Block Start
+    CreateFolder("folder2_1"); //PBI
+    
+       
+        
+    
+    CreateFolder("folder2_2"); //PBI
+} //Node1 Block End
+```
 <a name="Controller"></a>
 ### Fourth library : Organizer.Controller Library :
 
