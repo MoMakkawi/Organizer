@@ -234,10 +234,10 @@ and it does not even matter which block it is in.
 CreateFolder("folder1"); //Node1 Header
 { //Node1 Block Start
     CreateFolder("folder2_1");
-    {
+    { //Node2 Block Start
         CreateFolder("folder3");
         { ... }
-    }
+    } //Node2 Block End
     CreateFolder("folder2_2");
 } //Node1 Block End
 ```
