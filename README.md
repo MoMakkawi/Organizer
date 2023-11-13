@@ -33,8 +33,8 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
 ## There 2 Points that will be clarified for each library 
 - How can the user benefit from it in this project?
 - Some explanatory notes.
-- 
-<a name="OrganizerUsageLibrary"></a>
+  
+<a name="UsageNotes"></a>
 ### First Library : Organizer.Usage Library :
 #### How can the user benefit from Organizer.Usage Library in this project?
 Steps to benefit from this library in our project:
@@ -44,7 +44,7 @@ Steps to benefit from this library in our project:
 4. Make the constructor class inherit from the ["OrganizerServices" class](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) where it is located in the library under the "Organizer.Client" namespace
 5. Create a constructor from your class (Step 3).
 6. Use the "From" constructor Attribute(s) to specify the path (more than one path is allowed) in which the codes you want to organize will be located, and use the "To" constructor Attribute to specify the path (only one path is allowed) in which the resulting organized codes will be located.
-7.  Use an [organizer services](#UsageNotes). Curly brackets must be used as shown in the example.
+7.  Use an [organizer services](#ServicesExplain). Curly brackets must be used as shown in the example.
 
 Example :
 ```csharp
@@ -76,7 +76,6 @@ file class Organizer : OrganizerServices
     }
 }
 ```
-<a name="UsageNotes"></a>
 #### Some explanatory notes for Organizer.Usage Library.
 * [C# BaseTypes](https://learn.microsoft.com/en-us/dotnet/api/microsoft.codeanalysis.csharp.syntax.typedeclarationsyntax?view=roslyn-dotnet-4.6.0) That is, we focus on: Classes + Interfaces + Structures + Records
 * The [services](#ServicesExplain) provided by the organizer will be used in the form of invocations :
@@ -99,6 +98,7 @@ UpdateTypes("pattern", "updateName");
 UpdateTypes("pattern", "updateName", "except");
 ```
 
+<a name="Tree"></a>
 ### Second Library : Organizer.Tree Library :
 #### How can the user benefit from Organizer.Tree Library in this project?
 The main function of this library is to build a tree, which is done by calling the ```TreeBuilder``` function located in the [Builder.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Tree/Builder.cs) file. \
@@ -160,6 +160,8 @@ _The second_ is between two nodes. Let us determine the header of the second nod
 }
 #endregion Parent Node
 ```
+
+<a name="InternalChangingParamenters"></a>
 Before assigning the header value to the node, we perform maintenance only and only for the content of one type of service, which is ```CreateFolder("folderName");``` where the maintenance is in its parameters. The following example shows what was maintained. 
 
 **Note** that what you will see will change inside the organizer. You can call it an internal change, meaning that the code that the user wrote will not actually change and will remain as he wrote it.
@@ -187,14 +189,83 @@ CreateFolder("folder1");
 }
 ```
 
-<a name="OrganizerServicesLibrary"></a>
+<a name="Services"></a>
 ### Third Library : Organizer.Services Library :
 #### How can the user benefit from Organizer.Services Library in this project?
 In this library, the actual implementation of the organizer services will take place, as the basic functions that will be used later are: ```CreateForFolders```, ```IgnoreForTypes```, ```UpdateForTypes```, and ```ContainForTypes```.
 
-As it is clear from the names that each function is responsible for any implementation of any of the organizer services. For example, the ```IgnoreForTypes``` function in this library is responsible for the organizer services ```IgnoreType``` and ```IgnoreTypes``` provided by the [Organizer.Usage](#OrganizerUsageLibrary) library.
+As it is clear from the names that each function is responsible for any implementation of any of the organizer services. For example, the ```IgnoreForTypes``` function in this library is responsible for the organizer services ```IgnoreType``` and ```IgnoreTypes``` provided by the [Organizer.Usage](#UsageNotes) library.
 
+<a name="ServicesNotes"></a>
 #### Some explanatory notes for Organizer.Services Library.
+* The implementation of the organizer's services has an arrangement that takes into account the organizer's performance , Where as the diagram shows:
+![Organizer Services Implamentation ](https://github.com/MoMakkawi/Organizer/assets/94985793/65321e69-1373-4421-8362-924f33be7bd3)
+
+There are two mechanisms for implementing services. The first we will adopt for two services, i.e. ```UpdateForTypes```, ```IgnoreForTypes```, which depends on scanning, and the second for the two services, i.e. ```CreateForFolders```, and ```ContainForTypes```. It depends on the tree that we had worked on and explained here.
+
+You will notice that there are two mechanisms that we have adopted to implement the services.
+
+_The First_ we will adopt for two services: ```CreateForFolders```, and ```ContainForTypes```, which depend on the [tree](#Tree) that we had worked on and explained.For ```CreateForFolders``` Organizer service, we benefit from our previous work on [internally changing the parameters](#InternalChangingParamenters) of this service. We implement the file creation service on leafs only. You may wonder why? Because of the wonderful feature that .Net provides in order to [create multiple directories from a single full path](https://stackoverflow.com/questions/2134392/how-to-create-multiple-directories-from-a-single-full-path-in-c) . For the ```ContainForTypes``` Organizer service , we create files in parallel because their number may be large and this is a task that takes a significant amount of time to complete.
+
+_The Second_ is for the second two services, ```UpdateForTypes```, ```IgnoreForTypes```, where this mechanism is scanning,
+and here we bring all the calls present in the organizer constructor and we filter and execute. 
+There is no need to take into account Hierarchies, trees, etc., because this will increase the complexity for nothing.
+
+The following example means that we do not care about calling ignore type on any line that is inside the constructor,
+and it does not even matter which block it is in.
+    
+```csharp
+    [From("PathTo\\UnStructuredCode")]
+    [To("PathTo\\Destination\\OrganizedCode")]
+    public Organizer()
+    {
+        IgnoreType(typeName: "TName");
+
+        CreateFolder("Types");
+        {
+            IgnoreType(typeName: "TName");
+        }
+
+        IgnoreType(typeName: "TName");
+    }
+```
+* " Primary Block Invocation (PBI) " Note the following example in which there are 3 nodes we will focuse on Node1:
+```csharp
+CreateFolder("folder1"); //Node1 Header
+{ //Node1 Block Start
+    CreateFolder("folder2_1");
+    { //Node2 Block Start
+        CreateFolder("folder3");
+        { ... }
+    } //Node2 Block End
+    CreateFolder("folder2_2");
+} //Node1 Block End
+```
+
+PBI are the ivocations that are present in the block of the studied node only and not in its child blocks, because we consider those in the child blocks to be secondary. Applying this to the previous example, we notice that these ```CreateFolder("folder2_1");``` and ```CreateFolder("folder2_2"); ``` are the PBI's for the Node1.
+
+```csharp
+CreateFolder("folder1"); //Node1 Header
+{ //Node1 Block Start
+    CreateFolder("folder2_1"); //PBI
+    
+       
+        
+    
+    CreateFolder("folder2_2"); //PBI
+} //Node1 Block End
+```
+<a name="Controller"></a>
+### Fourth library : Organizer.Controller Library :
+
+<a name="ControllerWork"></a>
+#### How can the user benefit from Organizer.Controller Library in this project?
+This library will contain the functions that the organizer needs, and its presence helps implement the concept of **reuse**, as it is the layer that contains the functions that you can reuse, as I worked in the last layer in the organizer’s CLI version (this) or in the [Organizer-SG](https://github.com/MoMakkawi/Organizer-SG) version:
+```GetClasses``` and ```FindOrganizerClass``` , ```FindOrganizerConstructor``` , ```GetBlockSyntaxes``` and ```BuildFileStructureTree``` also ```ImplementOrganizerServices```.
+
+<a name="ControllerNotes"></a>
+#### Some explanatory notes for Organizer.Controller Library.
+Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Controller/Servicer.cs) in the function ```ImplementOrganizerServices``` applies the [diagram](#ServicesNotes) which was explained above to deeply understand the logic behind the execution sequence of Organizer Services
 
 # Note :
 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
