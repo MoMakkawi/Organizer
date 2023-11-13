@@ -1,7 +1,7 @@
 ﻿using static Organizer.Handler;
 using Organizer.Controller;
 
-do
+try
 {
     InputOrganizerPath()
         .GetFileContent()
@@ -12,6 +12,9 @@ do
         .GetBlockSyntaxes()
         .BuildFileStructureTree()
         .ImplementOrganizerServices();
-
-} while (true);
+}
+catch
+{
+    throw;
+}
 
