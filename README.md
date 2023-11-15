@@ -1,11 +1,10 @@
+<a name="Summary"></a> 
 # Summary:
 Organizer a tool called that automates the process of organizing system architecture files and folders based on the developer’s preference. 
 So, that could be used by the client to organize the structure of their source code. 
 This will result in more usable source code as it will be easier to surf, access and read.
 
-## Important note:
-There are two versions of this project, (This Version Here)  the first is a Docker Container, which contains a [Console Project](https://github.com/MoMakkawi/Organizer), while the second is [Soucre Generator](https://github.com/MoMakkawi/Organizer-SG) Run at Compite-Time.
-
+<a name="GeneralIdea"></a> 
 # General idea:
 This project is in the field of **Re-architecting** , It generates source code files and folders.
 this project presents a Console Project and many libraries created with Roslyn for .NET developers. the project presented is called Organizer. 
@@ -20,21 +19,24 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
  * A service to change the name(s) of specific type(s) depending on a base type name or pattern of multiple base types.
  * A service to ignore type(s) depending on a base type name or a pattern of multiple types.
  * Ability to exclude specific types from the creation or update patterns depending on a type name.
-
+   
+<a name="Techniques"></a>
 # About techniques:
  - Console Project
  - .NET Compiler Roslyn.
  - xUnit.
  - .NET 7.0.
-
+   
+<a name="OrganizerArchitecture"></a>
 # Organizer Architecture :
 ![Organizer Architecture](https://github.com/MoMakkawi/Organizer/assets/94985793/f07c6cf7-d8e4-44bc-b4b9-c5953d907b0e)
 
+<a name="ClarificationPoints"></a>
 ## There 2 Points that will be clarified for each library 
 - How can the user benefit from it in this project?
 - Some explanatory notes.
   
-<a name="UsageNotes"></a>
+<a name="Usage"></a>
 ### First Library : Organizer.Usage Library :
 #### How can the user benefit from Organizer.Usage Library in this project?
 Steps to benefit from this library in our project:
@@ -76,6 +78,7 @@ file class Organizer : OrganizerServices
     }
 }
 ```
+<a name="UsageNotes"></a>
 #### Some explanatory notes for Organizer.Usage Library.
 * [C# BaseTypes](https://learn.microsoft.com/en-us/dotnet/api/microsoft.codeanalysis.csharp.syntax.typedeclarationsyntax?view=roslyn-dotnet-4.6.0) That is, we focus on: Classes + Interfaces + Structures + Records
 * The [services](#ServicesExplain) provided by the organizer will be used in the form of invocations :
@@ -194,7 +197,7 @@ CreateFolder("folder1");
 #### How can the user benefit from Organizer.Services Library in this project?
 In this library, the actual implementation of the organizer services will take place, as the basic functions that will be used later are: ```CreateForFolders```, ```IgnoreForTypes```, ```UpdateForTypes```, and ```ContainForTypes```.
 
-As it is clear from the names that each function is responsible for any implementation of any of the organizer services. For example, the ```IgnoreForTypes``` function in this library is responsible for the organizer services ```IgnoreType``` and ```IgnoreTypes``` provided by the [Organizer.Usage](#UsageNotes) library.
+As it is clear from the names that each function is responsible for any implementation of any of the organizer services. For example, the ```IgnoreForTypes``` function in this library is responsible for the organizer services ```IgnoreType``` and ```IgnoreTypes``` provided by the [Organizer.Usage](#Usage) library.
 
 <a name="ServicesNotes"></a>
 #### Some explanatory notes for Organizer.Services Library.
@@ -257,8 +260,6 @@ CreateFolder("folder1"); //Node1 Header
 ```
 <a name="Controller"></a>
 ### Fourth library : Organizer.Controller Library :
-
-<a name="ControllerWork"></a>
 #### How can the user benefit from Organizer.Controller Library in this project?
 This library will contain the functions that the organizer needs, and its presence helps implement the concept of **reuse**, as it is the layer that contains the functions that you can reuse, as I worked in the last layer in the organizer’s CLI version (this) or in the [Organizer-SG](https://github.com/MoMakkawi/Organizer-SG) version:
 ```GetClasses``` and ```FindOrganizerClass``` , ```FindOrganizerConstructor``` , ```GetBlockSyntaxes``` and ```BuildFileStructureTree``` also ```ImplementOrganizerServices```.
@@ -268,7 +269,9 @@ This library will contain the functions that the organizer needs, and its presen
 Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Controller/Servicer.cs) in the function ```ImplementOrganizerServices``` applies the [diagram](#ServicesNotes) which was explained above to deeply understand the logic behind the execution sequence of Organizer Services
 
 # Note :
-There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
-You can access the code of The Organizer Source Code Generator At Compile Time via [GetHub Reopsitory](https://github.com/MoMakkawi/Organizer-SG),\
-You can download The Organizer Source Code Generator At Compile Time RELEASE via [NuGet](https://www.nuget.org/packages/MoMakkawi.Organizer.Generator),\
+* There are two versions of this project, (This Version Here)  the first is a Docker Container, which contains a [Console Project](https://github.com/MoMakkawi/Organizer), while the second is [Soucre Generator](https://github.com/MoMakkawi/Organizer-SG) Run at Compite-Time.
+
+* There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
+* You can access the code of The Organizer Source Code Generator At Compile Time via [GetHub Reopsitory](https://github.com/MoMakkawi/Organizer-SG),\
+* You can download The Organizer Source Code Generator At Compile Time RELEASE via [NuGet](https://www.nuget.org/packages/MoMakkawi.Organizer.Generator),\
 and The Organizer Source Code Generator At Compile Time Documentation [PDF Link](https://github.com/MoMakkawi/Organizer-SG/blob/master/Organizer%20Official%20Document.pdf).
