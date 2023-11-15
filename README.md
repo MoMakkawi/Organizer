@@ -271,7 +271,7 @@ Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blo
 # Note :
 * There are two versions of this project, (This Version Here)  the first is a Docker Container, which contains a [Console Project](https://github.com/MoMakkawi/Organizer), while the second is [Soucre Generator](https://github.com/MoMakkawi/Organizer-SG) Run at Compite-Time.
 
-* There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \
-* You can access the code of The Organizer Source Code Generator At Compile Time via [GetHub Reopsitory](https://github.com/MoMakkawi/Organizer-SG),\
-* You can download The Organizer Source Code Generator At Compile Time RELEASE via [NuGet](https://www.nuget.org/packages/MoMakkawi.Organizer.Generator),\
+* There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. 
+* You can access the code of The Organizer Source Code Generator At Compile Time via [GetHub Reopsitory](https://github.com/MoMakkawi/Organizer-SG),
+* You can download The Organizer Source Code Generator At Compile Time RELEASE via [NuGet](https://www.nuget.org/packages/MoMakkawi.Organizer.Generator),
 and The Organizer Source Code Generator At Compile Time Documentation [PDF Link](https://github.com/MoMakkawi/Organizer-SG/blob/master/Organizer%20Official%20Document.pdf).
