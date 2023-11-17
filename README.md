@@ -13,7 +13,7 @@ in different folders and files according to the needs of the client using a set 
 The meaning of unorganized code in the scope of The Organizer is C# code files full of base types.
 
 <a name="ServicesExplain"></a>
-### 🏁 The services provided by the Organizer:
+### 🤝 The services provided by the Organizer:
  * A service to create folder(s) to contain generated files.
  * A service to include base type(s) in a specific generated folder depending on a type name or a pattern.
  * A service to change the name(s) of specific type(s) depending on a base type name or pattern of multiple base types.
@@ -269,9 +269,8 @@ This library will contain the functions that the organizer needs, and its presen
 Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Controller/Servicer.cs) in the function ```ImplementOrganizerServices``` applies the [diagram](#ServicesNotes) which was explained above to deeply understand the logic behind the execution sequence of Organizer Services
 
 # ⚠️ Note :
-🔸 There are two versions of this project, (This Version Here)  the first is a Docker Container, which contains a [Console Project](https://github.com/MoMakkawi/Organizer), while the second is [Soucre Generator](https://github.com/MoMakkawi/Organizer-SG) Run at Compite-Time.
-
-🔸 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. 
-🔸 You can access the code of The Organizer Source Code Generator At Compile Time via [GetHub Reopsitory](https://github.com/MoMakkawi/Organizer-SG),
+🔸 There are two versions of this project, (This Version Here)  the first is a Docker Container, which contains a [Console Project](https://github.com/MoMakkawi/Organizer), while the second is [Soucre Generator](https://github.com/MoMakkawi/Organizer-SG) Run at Compite-Time. \ 
+🔸 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. \ 
+🔸 You can access the code of The Organizer Source Code Generator At Compile Time via [GetHub Reopsitory](https://github.com/MoMakkawi/Organizer-SG), \ 
 🔸 You can download The Organizer Source Code Generator At Compile Time RELEASE via [NuGet](https://www.nuget.org/packages/MoMakkawi.Organizer.Generator),
 and The Organizer Source Code Generator At Compile Time Documentation [PDF Link](https://github.com/MoMakkawi/Organizer-SG/blob/master/Organizer%20Official%20Document.pdf).
