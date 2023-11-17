@@ -202,7 +202,8 @@ As it is clear from the names that each function is responsible for any implemen
 <a name="ServicesNotes"></a>
 #### 🔷 Some explanatory notes for Organizer.Services Library.
 * The implementation of the organizer's services has an arrangement that takes into account the organizer's performance , Where as the diagram shows:
-![Organizer Services Implamentation ](https://github.com/MoMakkawi/Organizer/assets/94985793/65321e69-1373-4421-8362-924f33be7bd3)
+![ImplementOrganizerServices](https://github.com/MoMakkawi/Organizer/assets/94985793/8c24ffdf-9a94-48fe-bf04-730352ee8f34)
+
 
 There are two mechanisms for implementing services. The first we will adopt for two services, i.e. ```UpdateForTypes```, ```IgnoreForTypes```, which depends on scanning, and the second for the two services, i.e. ```CreateForFolders```, and ```ContainForTypes```. It depends on the tree that we had worked on and explained here.
 
