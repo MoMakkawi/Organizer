@@ -1,11 +1,11 @@
 <a name="Summary"></a> 
-# Summary:
+# 🧠 Summary:
 Organizer a tool called that automates the process of organizing system architecture files and folders based on the developer’s preference. 
 So, that could be used by the client to organize the structure of their source code. 
 This will result in more usable source code as it will be easier to surf, access and read.
 
 <a name="GeneralIdea"></a> 
-# General idea:
+# 📌 General idea:
 This project is in the field of **Re-architecting** , It generates source code files and folders.
 this project presents a Console Project and many libraries created with Roslyn for .NET developers. the project presented is called Organizer. 
 It meant to organize any unorganized C# code as requested by the client, by restructuring the base types (classes, interfaces, records, enumerations, structs) 
@@ -13,7 +13,7 @@ in different folders and files according to the needs of the client using a set 
 The meaning of unorganized code in the scope of The Organizer is C# code files full of base types.
 
 <a name="ServicesExplain"></a>
-### The services provided by the Organizer:
+### 🏁 The services provided by the Organizer:
  * A service to create folder(s) to contain generated files.
  * A service to include base type(s) in a specific generated folder depending on a type name or a pattern.
  * A service to change the name(s) of specific type(s) depending on a base type name or pattern of multiple base types.
@@ -21,24 +21,24 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
  * Ability to exclude specific types from the creation or update patterns depending on a type name.
    
 <a name="Techniques"></a>
-# About techniques:
+# 🚀 About techniques:
  - Console Project
  - .NET Compiler Roslyn.
  - xUnit.
  - .NET 7.0.
    
 <a name="OrganizerArchitecture"></a>
-# Organizer Architecture :
+# ☢️ Organizer Architecture :
 ![Organizer Architecture](https://github.com/MoMakkawi/Organizer/assets/94985793/f07c6cf7-d8e4-44bc-b4b9-c5953d907b0e)
 
 <a name="ClarificationPoints"></a>
-## There 2 Points that will be clarified for each library 
-- How can the user benefit from it in this project?
-- Some explanatory notes.
+## 🎤 There 2 Points that will be clarified for each library 
+🔸 How can the user benefit from it in this project?
+🔸 Some explanatory notes.
   
 <a name="Usage"></a>
-### First Library : Organizer.Usage Library :
-#### How can the user benefit from Organizer.Usage Library in this project?
+### 1️⃣ First Library : Organizer.Usage Library :
+#### 🔹How can the user benefit from Organizer.Usage Library in this project?
 Steps to benefit from this library in our project:
 1. Download the library (recommend [NuGet](https://www.nuget.org/profiles/MoMakkawi))
 2. Create a C# file (suffixed by .cs)
@@ -79,7 +79,7 @@ file class Organizer : OrganizerServices
 }
 ```
 <a name="UsageNotes"></a>
-#### Some explanatory notes for Organizer.Usage Library.
+#### 🔹Some explanatory notes for Organizer.Usage Library.
 * [C# BaseTypes](https://learn.microsoft.com/en-us/dotnet/api/microsoft.codeanalysis.csharp.syntax.typedeclarationsyntax?view=roslyn-dotnet-4.6.0) That is, we focus on: Classes + Interfaces + Structures + Records
 * The [services](#ServicesExplain) provided by the organizer will be used in the form of invocations :
 ```csharp
@@ -102,8 +102,8 @@ UpdateTypes("pattern", "updateName", "except");
 ```
 
 <a name="Tree"></a>
-### Second Library : Organizer.Tree Library :
-#### How can the user benefit from Organizer.Tree Library in this project?
+### 2️⃣ Second Library : Organizer.Tree Library :
+#### 🔹How can the user benefit from Organizer.Tree Library in this project?
 The main function of this library is to build a tree, which is done by calling the ```TreeBuilder``` function located in the [Builder.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Tree/Builder.cs) file. \
 ***The tree*** that we will build is like any tree that contains nodes and edges. \
 We start with the nodes. **The node** contains two basic things: the value and additional information called the node description. The following figure shows more details for Node Structure.
@@ -111,7 +111,7 @@ We start with the nodes. **The node** contains two basic things: the value and a
 To build **edges**, we take advantage of the additional information that we called the node description,The next paragraph will explain the mechanism of building the tree in the necessary detail.
 
 <a name="TreeNotes"></a>
-#### Some explanatory notes for Organizer.Tree Library.
+#### 🔹Some explanatory notes for Organizer.Tree Library.
 * To build the tree, we will go through three basic steps that will change the values of the node object, as the following diagram shows, which displays snapshots showing how the values change as the object passes through the stages.At each stage, we focus on the variable(s) whose value and color will change to yellow, as in the first step we assigned a value to the block.
 1. Build Nodes Descending.
 2. Build Edges.
@@ -193,14 +193,14 @@ CreateFolder("folder1");
 ```
 
 <a name="Services"></a>
-### Third Library : Organizer.Services Library :
-#### How can the user benefit from Organizer.Services Library in this project?
+### 3️⃣ Third Library : Organizer.Services Library :
+#### 🔹How can the user benefit from Organizer.Services Library in this project?
 In this library, the actual implementation of the organizer services will take place, as the basic functions that will be used later are: ```CreateForFolders```, ```IgnoreForTypes```, ```UpdateForTypes```, and ```ContainForTypes```.
 
 As it is clear from the names that each function is responsible for any implementation of any of the organizer services. For example, the ```IgnoreForTypes``` function in this library is responsible for the organizer services ```IgnoreType``` and ```IgnoreTypes``` provided by the [Organizer.Usage](#Usage) library.
 
 <a name="ServicesNotes"></a>
-#### Some explanatory notes for Organizer.Services Library.
+#### 🔹Some explanatory notes for Organizer.Services Library.
 * The implementation of the organizer's services has an arrangement that takes into account the organizer's performance , Where as the diagram shows:
 ![Organizer Services Implamentation ](https://github.com/MoMakkawi/Organizer/assets/94985793/65321e69-1373-4421-8362-924f33be7bd3)
 
@@ -259,19 +259,19 @@ CreateFolder("folder1"); //Node1 Header
 } //Node1 Block End
 ```
 <a name="Controller"></a>
-### Fourth library : Organizer.Controller Library :
-#### How can the user benefit from Organizer.Controller Library in this project?
+### 4️⃣ Fourth library : Organizer.Controller Library :
+#### 🔹How can the user benefit from Organizer.Controller Library in this project?
 This library will contain the functions that the organizer needs, and its presence helps implement the concept of **reuse**, as it is the layer that contains the functions that you can reuse, as I worked in the last layer in the organizer’s CLI version (this) or in the [Organizer-SG](https://github.com/MoMakkawi/Organizer-SG) version:
 ```GetClasses``` and ```FindOrganizerClass``` , ```FindOrganizerConstructor``` , ```GetBlockSyntaxes``` and ```BuildFileStructureTree``` also ```ImplementOrganizerServices```.
 
 <a name="ControllerNotes"></a>
-#### Some explanatory notes for Organizer.Controller Library.
+#### 🔹Some explanatory notes for Organizer.Controller Library.
 Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Controller/Servicer.cs) in the function ```ImplementOrganizerServices``` applies the [diagram](#ServicesNotes) which was explained above to deeply understand the logic behind the execution sequence of Organizer Services
 
-# Note :
-* There are two versions of this project, (This Version Here)  the first is a Docker Container, which contains a [Console Project](https://github.com/MoMakkawi/Organizer), while the second is [Soucre Generator](https://github.com/MoMakkawi/Organizer-SG) Run at Compite-Time.
+# ⚠️ Note :
+🔸 There are two versions of this project, (This Version Here)  the first is a Docker Container, which contains a [Console Project](https://github.com/MoMakkawi/Organizer), while the second is [Soucre Generator](https://github.com/MoMakkawi/Organizer-SG) Run at Compite-Time.
 
-* There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. 
-* You can access the code of The Organizer Source Code Generator At Compile Time via [GetHub Reopsitory](https://github.com/MoMakkawi/Organizer-SG),
-* You can download The Organizer Source Code Generator At Compile Time RELEASE via [NuGet](https://www.nuget.org/packages/MoMakkawi.Organizer.Generator),
+🔸 There is a version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. 
+🔸 You can access the code of The Organizer Source Code Generator At Compile Time via [GetHub Reopsitory](https://github.com/MoMakkawi/Organizer-SG),
+🔸 You can download The Organizer Source Code Generator At Compile Time RELEASE via [NuGet](https://www.nuget.org/packages/MoMakkawi.Organizer.Generator),
 and The Organizer Source Code Generator At Compile Time Documentation [PDF Link](https://github.com/MoMakkawi/Organizer-SG/blob/master/Organizer%20Official%20Document.pdf).
