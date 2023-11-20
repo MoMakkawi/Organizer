@@ -4,6 +4,13 @@ Organizer a tool called that automates the process of organizing system architec
 So, that could be used by the client to organize the structure of their source code. 
 This will result in more usable source code as it will be easier to surf, access and read.
 
+<a name="Contents"></a> 
+# 🚀📚 Table of contents :
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
 <a name="GeneralIdea"></a> 
 # 📌 General idea:
 This project is in the field of **Re-architecting** , It generates source code files and folders.
