@@ -286,7 +286,6 @@ Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blo
 #### 🔷 Some explanatory notes for Organizer.Console.
 The following Functional Flow Block Diagram (FFBD) is mirrored in a [Program.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer/Program.cs) file.
 ![FFBD](https://github.com/MoMakkawi/Organizer/assets/94985793/71d85d6a-9a89-49f8-b140-2207a2b64758)
-The following Functional Flow Block Diagram (FFBD) is mirrored in a Program.cs file
 
 
 # ⚠️ Note :
