@@ -5,11 +5,14 @@ So, that could be used by the client to organize the structure of their source c
 This will result in more usable source code as it will be easier to surf, access and read.
 
 <a name="Contents"></a> 
-# 🚀📚 Table of contents :
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+# 📚 Table of contents :
+| First Header  |
+| ------------- |
+| 1. Summary  |
+| 2. General idea  |
+|   2.1. The services provided by the Organizer  |
+| 3. Techniques  |
+| 4. Organizer Architecture  |
 
 <a name="GeneralIdea"></a> 
 # 📌 General idea:
@@ -281,6 +284,8 @@ Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blo
 #### 🔷 How can the user benefit from Organizer.Console ?
 <a name="ConsoleNotes"></a>
 #### 🔷 Some explanatory notes for Organizer.Console.
+The following Functional Flow Block Diagram (FFBD) is mirrored in a [Program.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer/Program.cs) file.
+![FFBD](https://github.com/MoMakkawi/Organizer/assets/94985793/71d85d6a-9a89-49f8-b140-2207a2b64758)
 The following Functional Flow Block Diagram (FFBD) is mirrored in a Program.cs file
 
 
