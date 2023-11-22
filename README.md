@@ -6,13 +6,12 @@ This will result in more usable source code as it will be easier to surf, access
 
 <a name="Contents"></a> 
 # 📚 Table of contents :
-| First Header  |
+| brief contents  |
 | ------------- |
-| 1. Summary  |
-| 2. General idea  |
-|   2.1. The services provided by the Organizer  |
-| 3. Techniques  |
-| 4. Organizer Architecture  |
+| 1. General idea  |
+| &emsp; 1.1. The services provided by the Organizer  |
+| 2. Techniques  |
+| 3. Organizer Architecture  |
 
 <a name="GeneralIdea"></a> 
 # 📌 General idea:
@@ -34,7 +33,6 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
 # 🚀 About techniques:
  〰️ Console Project   
  〰️ .NET Compiler Roslyn.    
- 〰️ xUnit.    
  〰️ .NET 7.0.    
    
 <a name="OrganizerArchitecture"></a>
