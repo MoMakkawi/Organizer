@@ -6,13 +6,19 @@ This will result in more usable source code as it will be easier to surf, access
 
 <a name="Contents"></a> 
 # 📚 Table of contents :
-| First Header  |
+| brief contents  |
 | ------------- |
-| 1. Summary  |
-| 2. General idea  |
-|   2.1. The services provided by the Organizer  |
-| 3. Techniques  |
+| 1. General idea  |
+| &emsp; 1.1. The services provided by the Organizer  |
+| 2. Techniques  |
+| 3. Explanatory points  |
 | 4. Organizer Architecture  |
+| &emsp; 4.1 Organizer.Usage Library |
+| &emsp; 4.2 Organizer.Tree Library|
+| &emsp; 4.3 Organizer.Services Library |
+| &emsp; 4.4 Organizer.Controller Library |
+| &emsp; 4.5 Organizer.Console |
+| 5. Nots |
 
 <a name="GeneralIdea"></a> 
 # 📌 General idea:
@@ -34,17 +40,17 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
 # 🚀 About techniques:
  〰️ Console Project   
  〰️ .NET Compiler Roslyn.    
- 〰️ xUnit.    
- 〰️ .NET 7.0.    
+ 〰️ .NET 7.0.   
+ 
+<a name="ClarificationPoints"></a>
+## 🎤 There 2 Points that will be clarified for each library 
+🟡 How can the user benefit from it in this project?   
+🟡 Some explanatory notes.
    
 <a name="OrganizerArchitecture"></a>
 # ☢️ Organizer Architecture :
 ![Organizer Architecture](https://github.com/MoMakkawi/Organizer/assets/94985793/f07c6cf7-d8e4-44bc-b4b9-c5953d907b0e)
 
-<a name="ClarificationPoints"></a>
-## 🎤 There 2 Points that will be clarified for each library 
-🟡 How can the user benefit from it in this project?   
-🟡 Some explanatory notes.
   
 <a name="Usage"></a>
 ### 1️⃣ First Library : Organizer.Usage Library :
