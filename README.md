@@ -1,24 +1,22 @@
-<a name="Summary"></a> 
 # 🧠 Summary:
 Organizer a tool called that automates the process of organizing system architecture files and folders based on the developer’s preference. 
 So, that could be used by the client to organize the structure of their source code. 
 This will result in more usable source code as it will be easier to surf, access and read.
 
-<a name="Contents"></a> 
 # 📚 Table of contents :
 | brief contents  |
 | ------------- |
-| 1. General idea  |
-| &emsp; 1.1. The services provided by the Organizer  |
-| 2. Techniques  |
-| 3. Explanatory points  |
-| 4. Organizer Architecture  |
-| &emsp; 4.1 Organizer.Usage Library |
-| &emsp; 4.2 Organizer.Tree Library|
-| &emsp; 4.3 Organizer.Services Library |
-| &emsp; 4.4 Organizer.Controller Library |
-| &emsp; 4.5 Organizer.Console |
-| 5. Nots |
+| [1. General idea](#GeneralIdea)  |
+| &emsp; [1.1. The services provided by the Organizer](#ServicesExplain)  |
+| [2. Techniques](#Techniques)  |
+| [3. Explanatory points](#ClarificationPoints)  |
+| [4. Organizer Architecture](#OrganizerArchitecture)  |
+| &emsp; [4.1 Organizer.Usage Library](#Usage) |
+| &emsp; [4.2 Organizer.Tree Library](#Tree)|
+| &emsp; [4.3 Organizer.Services Library](#Services) |
+| &emsp; [4.4 Organizer.Controller Library](#Controller) |
+| &emsp; [4.5 Organizer.Console](#Console) |
+| [5. Note](#Note) |
 
 <a name="GeneralIdea"></a> 
 # 📌 General idea:
@@ -293,6 +291,6 @@ Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blo
 The following Functional Flow Block Diagram (FFBD) is mirrored in a [Program.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer/Program.cs) file.
 ![FFBD](https://github.com/MoMakkawi/Organizer/assets/94985793/71d85d6a-9a89-49f8-b140-2207a2b64758)
 
-
+<a name="Note"></a>
 # ⚠️ Note :
 There are two versions of this project, (This Version Here)  the first is a Docker Container, which contains a [Console Project](https://github.com/MoMakkawi/Organizer), while the second version of this project that works at Compilation Time called **The Organizer Source Code Generator** and is well documented. You can access the code of The Organizer Source Code Generator At Compile Time via [GetHub Reopsitory](https://github.com/MoMakkawi/Organizer-SG), You can download The Organizer Source Code Generator At Compile Time RELEASE via [NuGet](https://www.nuget.org/packages/MoMakkawi.Organizer.Generator), and The Organizer Source Code Generator At Compile Time Documentation [PDF Link](https://github.com/MoMakkawi/Organizer-SG/blob/master/Organizer%20Official%20Document.pdf).
