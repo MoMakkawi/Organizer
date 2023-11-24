@@ -4,10 +4,10 @@ So, that could be used by the client to organize the structure of their source c
 This will result in more usable source code as it will be easier to surf, access and read.
 
 # 📚 Table of contents :
-| brief contents  |
+| **_Brief Contents_**  |
 | ------------- |
 | [1. General idea](#GeneralIdea)  |
-| &emsp; [1.1. The services provided by the Organizer](#ServicesExplain)  |
+| &emsp; [1.1. Organizer Services](#ServicesExplain)  |
 | [2. Techniques](#Techniques)  |
 | [3. Explanatory points](#ClarificationPoints)  |
 | [4. Organizer Architecture](#OrganizerArchitecture)  |
