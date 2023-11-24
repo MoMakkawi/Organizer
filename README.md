@@ -4,19 +4,19 @@ So, that could be used by the client to organize the structure of their source c
 This will result in more usable source code as it will be easier to surf, access and read.
 
 # 📚 Table of contents :
- **_Brief Contents_**  
- ------------- 
- [1. General idea](#GeneralIdea)  
- &emsp; [1.1. Organizer Services](#ServicesExplain)  
- [2. Techniques](#Techniques)  
- [3. Explanatory points](#ClarificationPoints)  
- [4. Organizer Architecture](#OrganizerArchitecture)  
- &emsp; [4.1 Organizer.Usage Library](#Usage) 
- &emsp; [4.2 Organizer.Tree Library](#Tree)
- &emsp; [4.3 Organizer.Services Library](#Services) 
- &emsp; [4.4 Organizer.Controller Library](#Controller) 
- &emsp; [4.5 Organizer.Console](#Console) 
- [5. Note](#Note) 
+| **_Brief Contents_**  
+| ------------- 
+| [1. General idea](#GeneralIdea)  
+| &emsp; [1.1. Organizer Services](#ServicesExplain)  
+| [2. Techniques](#Techniques)  
+| [3. Explanatory points](#ClarificationPoints)  
+| [4. Organizer Architecture](#OrganizerArchitecture)  
+| &emsp; [4.1 Organizer.Usage Library](#Usage) 
+| &emsp; [4.2 Organizer.Tree Library](#Tree)
+| &emsp; [4.3 Organizer.Services Library](#Services) 
+| &emsp; [4.4 Organizer.Controller Library](#Controller) 
+| &emsp; [4.5 Organizer.Console](#Console) 
+| [5. Note](#Note) 
 
 <a name="GeneralIdea"></a> 
 # 📌 General idea:
