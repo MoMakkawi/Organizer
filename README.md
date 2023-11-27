@@ -51,7 +51,7 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
 
   
 <a name="Usage"></a>
-### 1️⃣ First Library : Organizer.Usage Library :
+### 1️⃣ Organizer.Usage Library :
 #### 🔷 How can the user benefit from Organizer.Usage Library in this project?
 Steps to benefit from this library in our project:
 1. Download the library (recommend [NuGet](https://www.nuget.org/profiles/MoMakkawi))
@@ -116,7 +116,7 @@ UpdateTypes("pattern", "updateName", "except");
 ```
 
 <a name="Tree"></a>
-### 2️⃣ Second Library : Organizer.Tree Library :
+### 2️⃣ Organizer.Tree Library :
 #### 🔷 How can the user benefit from Organizer.Tree Library in this project?
 The main function of this library is to build a tree, which is done by calling the ```TreeBuilder``` function located in the [Builder.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Tree/Builder.cs) file. \
 ***The tree*** that we will build is like any tree that contains nodes and edges. \
@@ -207,7 +207,7 @@ CreateFolder("folder1");
 ```
 
 <a name="Services"></a>
-### 3️⃣ Third Library : Organizer.Services Library :
+### 3️⃣ Organizer.Services Library :
 #### 🔷 How can the user benefit from Organizer.Services Library in this project?
 In this library, the actual implementation of the organizer services will take place, as the basic functions that will be used later are: ```CreateForFolders```, ```IgnoreForTypes```, ```UpdateForTypes```, and ```ContainForTypes```.
 
@@ -274,7 +274,7 @@ CreateFolder("folder1"); //Node1 Header
 } //Node1 Block End
 ```
 <a name="Controller"></a>
-### 4️⃣ Fourth library : Organizer.Controller Library :
+### 4️⃣ Organizer.Controller Library :
 #### 🔷 How can the user benefit from Organizer.Controller Library in this project?
 This library will contain the functions that the organizer needs, and its presence helps implement the concept of **reuse**, as it is the layer that contains the functions that you can reuse, as I worked in the last layer in the organizer’s CLI version (this) or in the [Organizer-SG](https://github.com/MoMakkawi/Organizer-SG) version:
 ```GetClasses``` and ```FindOrganizerClass``` , ```FindOrganizerConstructor``` , ```GetBlockSyntaxes``` and ```BuildFileStructureTree``` also ```ImplementOrganizerServices```.
@@ -284,7 +284,7 @@ This library will contain the functions that the organizer needs, and its presen
 Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Controller/Servicer.cs) in the function ```ImplementOrganizerServices``` applies the [diagram](#ServicesNotes) which was explained above to deeply understand the logic behind the execution sequence of Organizer Services.
 
 <a name="Console"></a>
-### 5️⃣ Fifth : Organizer.Console :
+### 5️⃣ Organizer.Console :
 #### 🔷 How can the user benefit from Organizer.Console ?
 <a name="ConsoleNotes"></a>
 #### 🔷 Some explanatory notes for Organizer.Console.
