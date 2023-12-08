@@ -57,7 +57,7 @@ Steps to benefit from this library in our project:
 1. Download the library (recommend [NuGet](https://www.nuget.org/profiles/MoMakkawi))
 2. Create a C# file (suffixed by .cs)
 3. Create a class with any name you prefer (I recommend the name “Organizer”)
-4. Make the constructor class inherit from the [```OrganizerServices```]class(https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) where it is located in the library under the "Organizer.Client" namespace
+4. Make the constructor class inherit from the [```OrganizerServices```](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) class where it is located in the library under the "Organizer.Client" namespace
 5. Create a constructor from your class (Step 3).
 6. Use the "From" constructor Attribute(s) to specify the path (more than one path is allowed) in which the codes you want to organize will be located, and use the "To" constructor Attribute to specify the path (only one path is allowed) in which the resulting organized codes will be located.
 7.  Use an [organizer services](#ServicesExplain). Curly brackets must be used as shown in the example.
@@ -121,7 +121,7 @@ UpdateTypes("pattern", "updateName", "except");
 The main function of this library is to build a tree, which is done by calling the ```TreeBuilder``` function located in the [Builder.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Tree/Builder.cs) file. \
 ***The tree*** that we will build is like any tree that contains nodes and edges. \
 We start with the nodes. **The node** contains two basic things: the value and additional information called the node description. The following figure shows more details for Node Structure.
-![Node structure ](https://github.com/MoMakkawi/Organizer/assets/94985793/19d1777b-fe15-412f-be80-4b4c09351072) \
+![Node structure](https://github.com/MoMakkawi/Organizer/assets/94985793/19d1777b-fe15-412f-be80-4b4c09351072) \
 To build **edges**, we take advantage of the additional information that we called the node description,The next paragraph will explain the mechanism of building the tree in the necessary detail.
 
 <a name="TreeNotes"></a>
@@ -287,7 +287,7 @@ Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blo
 ### 5️⃣ Organizer.Console :
 #### 🔷 How can the user benefit from Organizer.Console ?
 The user is asked to enter the path to the .cs file located on his device,
-as this file contains a class that inherits from [```OrganizerService```](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) class,
+as this file contains a class that inherits from [ ```OrganizerService``` ](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) class,
 as the previously explained [above](#Usage),
 and then the necessary functions are called as shown [below](#ConsoleNotes).
 <a name="ConsoleNotes"></a>
