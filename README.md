@@ -286,6 +286,10 @@ Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blo
 <a name="Console"></a>
 ### 5️⃣ Organizer.Console :
 #### 🔷 How can the user benefit from Organizer.Console ?
+The user is asked to enter the path to the .cs file located on his device,
+as this file contains a class that inherits from Organizer Service,
+as the previously explained [above](#Usage),
+and then the necessary functions are called as shown [below](#ConsoleNotes).
 <a name="ConsoleNotes"></a>
 #### 🔷 Some explanatory notes for Organizer.Console.
 The following Functional Flow Block Diagram (FFBD) is mirrored in a [Program.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer/Program.cs) file.
