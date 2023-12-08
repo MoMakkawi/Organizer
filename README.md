@@ -287,7 +287,7 @@ Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blo
 ### 5️⃣ Organizer.Console :
 #### 🔷 How can the user benefit from Organizer.Console ?
 The user is asked to enter the path to the .cs file located on his device,
-as this file contains a class that inherits from Organizer Service,
+as this file contains a class that inherits from [```OrganizerService```](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) class,
 as the previously explained [above](#Usage),
 and then the necessary functions are called as shown [below](#ConsoleNotes).
 <a name="ConsoleNotes"></a>
