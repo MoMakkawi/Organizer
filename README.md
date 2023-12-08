@@ -57,7 +57,7 @@ Steps to benefit from this library in our project:
 1. Download the library (recommend [NuGet](https://www.nuget.org/profiles/MoMakkawi))
 2. Create a C# file (suffixed by .cs)
 3. Create a class with any name you prefer (I recommend the name “Organizer”)
-4. Make the constructor class inherit from the [```OrganizerServices``` class](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) where it is located in the library under the "Organizer.Client" namespace
+4. Make the constructor class inherit from the [```OrganizerServices```]class(https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) where it is located in the library under the "Organizer.Client" namespace
 5. Create a constructor from your class (Step 3).
 6. Use the "From" constructor Attribute(s) to specify the path (more than one path is allowed) in which the codes you want to organize will be located, and use the "To" constructor Attribute to specify the path (only one path is allowed) in which the resulting organized codes will be located.
 7.  Use an [organizer services](#ServicesExplain). Curly brackets must be used as shown in the example.
