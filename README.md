@@ -36,10 +36,10 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
    
 <a name="Techniques"></a>
 # 🚀 About techniques:
- 〰️ Console Project.
+ 〰️ Console Project.    
  〰️ .NET Compiler Roslyn.    
  〰️ .NET 7.0.   
- 〰️ Visio.
+ 〰️ Visio.    
   
 <a name="ClarificationPoints"></a>
 ## 🎤 There 2 Points that will be clarified for each library 
