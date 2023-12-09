@@ -42,7 +42,7 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
  
 <a name="ClarificationPoints"></a>
 ## 🎤 There 2 Points that will be clarified for each library 
-🟡 How can the user benefit from it in this project?   
+🟡 Why we built it in this project?   
 🟡 Some explanatory notes.
    
 <a name="OrganizerArchitecture"></a>
@@ -52,7 +52,7 @@ The meaning of unorganized code in the scope of The Organizer is C# code files f
   
 <a name="Usage"></a>
 ### 1️⃣ Organizer.Usage Library :
-#### 🔷 How can the user benefit from Organizer.Usage Library in this project?
+#### 🔷 Why we built Organizer.Usage ?
 Steps to benefit from this library in our project:
 1. Download the library (recommend [NuGet](https://www.nuget.org/profiles/MoMakkawi))
 2. Create a C# file (suffixed by .cs)
@@ -117,7 +117,7 @@ UpdateTypes("pattern", "updateName", "except");
 
 <a name="Tree"></a>
 ### 2️⃣ Organizer.Tree Library :
-#### 🔷 How can the user benefit from Organizer.Tree Library in this project?
+#### 🔷 Why we built Organizer.Tree Library ?
 The main function of this library is to build a tree, which is done by calling the ```TreeBuilder``` function located in the [Builder.cs](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Tree/Builder.cs) file. \
 ***The tree*** that we will build is like any tree that contains nodes and edges. \
 We start with the nodes. **The node** contains two basic things: the value and additional information called the node description. The following figure shows more details for Node Structure.
@@ -208,7 +208,7 @@ CreateFolder("folder1");
 
 <a name="Services"></a>
 ### 3️⃣ Organizer.Services Library :
-#### 🔷 How can the user benefit from Organizer.Services Library in this project?
+#### 🔷 Why we built Organizer.Services Library?
 In this library, the actual implementation of the organizer services will take place, as the basic functions that will be used later are: ```CreateForFolders```, ```IgnoreForTypes```, ```UpdateForTypes```, and ```ContainForTypes```.
 
 As it is clear from the names that each function is responsible for any implementation of any of the organizer services. For example, the ```IgnoreForTypes``` function in this library is responsible for the organizer services ```IgnoreType``` and ```IgnoreTypes``` provided by the [Organizer.Usage](#Usage) library.
@@ -275,7 +275,7 @@ CreateFolder("folder1"); //Node1 Header
 ```
 <a name="Controller"></a>
 ### 4️⃣ Organizer.Controller Library :
-#### 🔷 How can the user benefit from Organizer.Controller Library in this project?
+#### 🔷 Why we built Organizer.Controller Library?
 This library will contain the functions that the organizer needs, and its presence helps implement the concept of **reuse**, as it is the layer that contains the functions that you can reuse, as I worked in the last layer in the organizer’s CLI version (this) or in the [Organizer-SG](https://github.com/MoMakkawi/Organizer-SG) version:
 ```GetClasses``` and ```FindOrganizerClass``` , ```FindOrganizerConstructor``` , ```GetBlockSyntaxes``` and ```BuildFileStructureTree``` also ```ImplementOrganizerServices```.
 
@@ -285,7 +285,7 @@ Here in this library in [Servicer.cs](https://github.com/MoMakkawi/Organizer/blo
 
 <a name="Console"></a>
 ### 5️⃣ Organizer.Console :
-#### 🔷 How can the user benefit from Organizer.Console ?
+#### 🔷 Why we built Organizer.Console ?
 The user is asked to enter the path to the .cs file located on his device,
 as this file contains a class that inherits from [ ```OrganizerService``` ](https://github.com/MoMakkawi/Organizer/blob/master/Src/Organizer.Usage/OrganizerServices.cs) class,
 as the previously explained [above](#Usage),
